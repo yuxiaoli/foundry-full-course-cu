@@ -20,6 +20,10 @@ python -m http.server 8000 --bind 127.0.0.1 --directory dist
 
 `develop` 上的书稿、站点和工作流改动会触发构建、验收和发布。Pages 的发布来源为 GitHub Actions，`github-pages` 部署环境允许 `develop`。部署使用工作流内置的 `GITHUB_TOKEN`。
 
-在 Actions 的 Web3 入门书工作流中手动运行时，选择 develop。默认只执行构建和验收。勾选 deploy 后同时发布。
+在仓库根目录可用现有 GitHub CLI 登录手动验收。将 `deploy` 改为 `true` 即会在验收通过后发布。
+
+```powershell
+gh workflow run web3-book-pages.yml --ref develop -f deploy=false
+```
 
 源码构建仅输入书稿、配图和站点资产。指向本机参考书、来源规划和写作进度的引用保留原文标签与路径说明。线上产物包含 HTML、26 张插图、样式、脚本及搜索索引。
