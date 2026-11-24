@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454" width="1000" height="454" role="img" aria-labelledby="title12 desc12">
+<title id="title12">用相同付款隔离报价的影响</title>
+<desc id="desc12">两个独立本地场景 · 每次都从相同状态开始。只改价格：给定输入，小周付 0.003 ETH，门槛仍为 5 USD。分别观察：Mock 报 2000 USD/ETH，折合 6 USD，记录本次付款；Mock 报 1000 USD/ETH，折合 3 USD，回退，余额不增加。课程已有测试与这里的两报价练习各自保留输入和预期。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow12" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="454" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">用相同付款隔离报价的影响</text>
+<text x="42" y="92" class="sub bound" data-right="958">两个独立本地场景 · 每次都从相同状态开始</text>
+<text x="42" y="122" class="row">只改价格</text><rect x="42.0" y="136" width="916.0" height="100" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="74" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="948.0">给定输入</text><text x="62.0" y="192" class="detail bound" data-right="948.0">小周付 0.003 ETH</text><text x="62.0" y="214" class="detail bound" data-right="948.0">门槛仍为 5 USD</text><text x="42" y="271" class="row">分别观察</text><rect x="42.0" y="285" width="444.0" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="298" width="4" height="74" rx="2" fill="#b3dece"/><text x="62.0" y="317" class="heading bound" fill="#135c4c" data-right="476.0">Mock 报 2000 USD/ETH</text><text x="62.0" y="341" class="detail bound" data-right="476.0">折合 6 USD</text><text x="62.0" y="363" class="detail bound" data-right="476.0">记录本次付款</text><rect x="514.0" y="285" width="444.0" height="100" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="298" width="4" height="74" rx="2" fill="#efd8a0"/><text x="534.0" y="317" class="heading bound" fill="#7c4d13" data-right="948.0">Mock 报 1000 USD/ETH</text><text x="534.0" y="341" class="detail bound" data-right="948.0">折合 3 USD</text><text x="534.0" y="363" class="detail bound" data-right="948.0">回退，余额不增加</text><path d="M500.0 236 V244 H264.0 V283" class="fork" marker-end="url(#arrow12)"/><path d="M500.0 236 V244 H736.0 V283" class="fork" marker-end="url(#arrow12)"/>
+<rect x="42" y="411" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="433" class="note bound" data-right="950">课程已有测试与这里的两报价练习各自保留输入和预期。</text>
+</svg>

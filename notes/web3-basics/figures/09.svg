@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454" width="1000" height="454" role="img" aria-labelledby="title09 desc09">
+<title id="title09">一个工厂，两份独立状态</title>
+<desc id="desc09">索引定位实例，ABI 描述怎样调用。工厂的索引：小周调用工厂，sfStore(0, 777)；工厂查列表，索引 0 → A，索引 1 → B。执行后的各实例：A · 索引 0，store(777)，读回 777；B · 索引 1，未收到本轮写入，仍读 0。工厂中的 msg.sender 是小周；A 在收到外部调用时看到工厂地址。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow09" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="454" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">一个工厂，两份独立状态</text>
+<text x="42" y="92" class="sub bound" data-right="958">索引定位实例，ABI 描述怎样调用</text>
+<text x="42" y="122" class="row">工厂的索引</text><rect x="42.0" y="136" width="444.0" height="100" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="74" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="476.0">小周调用工厂</text><text x="62.0" y="192" class="detail bound" data-right="476.0">sfStore(0, 777)</text><path d="M490.0 186.0 H508.0" class="edge" marker-end="url(#arrow09)"/><rect x="514.0" y="136" width="444.0" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="515.0" y="149" width="4" height="74" rx="2" fill="#b3dece"/><text x="534.0" y="168" class="heading bound" fill="#135c4c" data-right="948.0">工厂查列表</text><text x="534.0" y="192" class="detail bound" data-right="948.0">索引 0 → A</text><text x="534.0" y="214" class="detail bound" data-right="948.0">索引 1 → B</text><text x="42" y="271" class="row">执行后的各实例</text><rect x="42.0" y="285" width="444.0" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="298" width="4" height="74" rx="2" fill="#b3dece"/><text x="62.0" y="317" class="heading bound" fill="#135c4c" data-right="476.0">A · 索引 0</text><text x="62.0" y="341" class="detail bound" data-right="476.0">store(777)</text><text x="62.0" y="363" class="detail bound" data-right="476.0">读回 777</text><path d="M490.0 335.0 H508.0" class="edge" marker-end="url(#arrow09)"/><rect x="514.0" y="285" width="444.0" height="100" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="298" width="4" height="74" rx="2" fill="#efd8a0"/><text x="534.0" y="317" class="heading bound" fill="#7c4d13" data-right="948.0">B · 索引 1</text><text x="534.0" y="341" class="detail bound" data-right="948.0">未收到本轮写入</text><text x="534.0" y="363" class="detail bound" data-right="948.0">仍读 0</text>
+<rect x="42" y="411" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="433" class="note bound" data-right="950">工厂中的 msg.sender 是小周；A 在收到外部调用时看到工厂地址。</text>
+</svg>

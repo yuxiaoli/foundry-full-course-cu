@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 587" width="1000" height="587" role="img" aria-labelledby="title04 desc04">
+<title id="title04">两份候选记录怎样汇成一份历史</title>
+<desc id="desc04">先逐份检查，再决定保留哪个区块分支。共同起点：同一个父区块，小林的 nonce 为 7，两个候选请求争用同一序号。候选区块并列：候选 X，收录转账 A，小周收到 0.01 ETH；候选 Y，收录另一个候选付款，同一 nonce 已被它使用。收敛到选定历史：有效性检查，交易和区块各自满足规则；选链，按协议选择可接受分支；最终性，再检查该网络的确认规则。画出替代候选分支，不把两笔冲突付款合并到同一历史。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="587" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">两份候选记录怎样汇成一份历史</text>
+<text x="42" y="92" class="sub bound" data-right="958">先逐份检查，再决定保留哪个区块分支</text>
+<text x="42" y="122" class="row">共同起点</text><rect x="42.0" y="136" width="916.0" height="100" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="74" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="948.0">同一个父区块</text><text x="62.0" y="192" class="detail bound" data-right="948.0">小林的 nonce 为 7</text><text x="62.0" y="214" class="detail bound" data-right="948.0">两个候选请求争用同一序号</text><text x="42" y="271" class="row">候选区块并列</text><rect x="42.0" y="285" width="444.0" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="298" width="4" height="74" rx="2" fill="#b3dece"/><text x="62.0" y="317" class="heading bound" fill="#135c4c" data-right="476.0">候选 X</text><text x="62.0" y="341" class="detail bound" data-right="476.0">收录转账 A</text><text x="62.0" y="363" class="detail bound" data-right="476.0">小周收到 0.01 ETH</text><rect x="514.0" y="285" width="444.0" height="100" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="298" width="4" height="74" rx="2" fill="#efd8a0"/><text x="534.0" y="317" class="heading bound" fill="#7c4d13" data-right="948.0">候选 Y</text><text x="534.0" y="341" class="detail bound" data-right="948.0">收录另一个候选付款</text><text x="534.0" y="363" class="detail bound" data-right="948.0">同一 nonce 已被它使用</text><text x="42" y="420" class="row">收敛到选定历史</text><rect x="42.0" y="434" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="43.0" y="447" width="4" height="58" rx="2" fill="#efd8a0"/><text x="62.0" y="466" class="heading bound" fill="#7c4d13" data-right="318.6666666666667">有效性检查</text><text x="62.0" y="490" class="detail bound" data-right="318.6666666666667">交易和区块各自满足规则</text><rect x="356.6666666666667" y="434" width="286.6666666666667" height="84" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="357.6666666666667" y="447" width="4" height="58" rx="2" fill="#d9d0f1"/><text x="376.6666666666667" y="466" class="heading bound" fill="#4a3d7a" data-right="633.3333333333334">选链</text><text x="376.6666666666667" y="490" class="detail bound" data-right="633.3333333333334">按协议选择可接受分支</text><rect x="671.3333333333334" y="434" width="286.6666666666667" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="672.3333333333334" y="447" width="4" height="58" rx="2" fill="#bed8f5"/><text x="691.3333333333334" y="466" class="heading bound" fill="#144d7b" data-right="948.0">最终性</text><text x="691.3333333333334" y="490" class="detail bound" data-right="948.0">再检查该网络的确认规则</text><path d="M500.0 236 V244 H264.0 V283" class="fork" marker-end="url(#arrow04)"/><path d="M500.0 236 V244 H736.0 V283" class="fork" marker-end="url(#arrow04)"/>
+<rect x="42" y="544" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="566" class="note bound" data-right="950">画出替代候选分支，不把两笔冲突付款合并到同一历史。</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" role="img" aria-labelledby="title03 desc03">
+<title id="title03">执行一次，余额和序号怎样变</title>
+<desc id="desc03">普通转账 A · EIP-1559 教学数据。两份账本快照：执行前，小林 1.000000 ETH，小周 0.250000 ETH，小林 nonce = 7；转账和实付费，转账 0.010000 ETH，费用 0.000042 ETH，21,000 × 2 gwei；执行后，小林 0.989958 ETH，小周 0.260000 ETH，小林 nonce = 8。支付的费用分流：基础费销毁，0.0000315 ETH；优先费，0.0000105 ETH。查询余额只读取选定状态，回执描述一笔交易的执行。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="460" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">执行一次，余额和序号怎样变</text>
+<text x="42" y="92" class="sub bound" data-right="958">普通转账 A · EIP-1559 教学数据</text>
+<text x="42" y="122" class="row">两份账本快照</text><rect x="42.0" y="136" width="286.6666666666667" height="122" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="96" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="318.6666666666667">执行前</text><text x="62.0" y="192" class="detail bound" data-right="318.6666666666667">小林 1.000000 ETH</text><text x="62.0" y="214" class="detail bound" data-right="318.6666666666667">小周 0.250000 ETH</text><text x="62.0" y="236" class="detail bound" data-right="318.6666666666667">小林 nonce = 7</text><path d="M332.6666666666667 197.0 H350.6666666666667" class="edge" marker-end="url(#arrow03)"/><rect x="356.6666666666667" y="136" width="286.6666666666667" height="122" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="357.6666666666667" y="149" width="4" height="96" rx="2" fill="#b3dece"/><text x="376.6666666666667" y="168" class="heading bound" fill="#135c4c" data-right="633.3333333333334">转账和实付费</text><text x="376.6666666666667" y="192" class="detail bound" data-right="633.3333333333334">转账 0.010000 ETH</text><text x="376.6666666666667" y="214" class="detail bound" data-right="633.3333333333334">费用 0.000042 ETH</text><text x="376.6666666666667" y="236" class="detail bound" data-right="633.3333333333334">21,000 × 2 gwei</text><path d="M647.3333333333334 197.0 H665.3333333333334" class="edge" marker-end="url(#arrow03)"/><rect x="671.3333333333334" y="136" width="286.6666666666667" height="122" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="672.3333333333334" y="149" width="4" height="96" rx="2" fill="#efd8a0"/><text x="691.3333333333334" y="168" class="heading bound" fill="#7c4d13" data-right="948.0">执行后</text><text x="691.3333333333334" y="192" class="detail bound" data-right="948.0">小林 0.989958 ETH</text><text x="691.3333333333334" y="214" class="detail bound" data-right="948.0">小周 0.260000 ETH</text><text x="691.3333333333334" y="236" class="detail bound" data-right="948.0">小林 nonce = 8</text><text x="42" y="293" class="row">支付的费用分流</text><rect x="42.0" y="307" width="444.0" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="320" width="4" height="58" rx="2" fill="#b3dece"/><text x="62.0" y="339" class="heading bound" fill="#135c4c" data-right="476.0">基础费销毁</text><text x="62.0" y="363" class="detail bound" data-right="476.0">0.0000315 ETH</text><path d="M490.0 349.0 H508.0" class="edge" marker-end="url(#arrow03)"/><rect x="514.0" y="307" width="444.0" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="320" width="4" height="58" rx="2" fill="#efd8a0"/><text x="534.0" y="339" class="heading bound" fill="#7c4d13" data-right="948.0">优先费</text><text x="534.0" y="363" class="detail bound" data-right="948.0">0.0000105 ETH</text>
+<rect x="42" y="417" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="439" class="note bound" data-right="950">查询余额只读取选定状态，回执描述一笔交易的执行。</text>
+</svg>

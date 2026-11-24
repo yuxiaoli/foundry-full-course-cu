@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 438" width="1000" height="438" role="img" aria-labelledby="title16 desc16">
+<title id="title16">一个 token ID 有两条查询路径</title>
+<desc id="desc16">把链上所有者记录和媒体展示分开。所有权：合约地址 + tokenId，共同确定查询对象；ownerOf(tokenId)，返回登记的所有者。元数据：同一个 tokenId，调用 tokenURI；BasicNft，外部 URI → JSON，JSON 的 image 字段；MoodNft，外层 Base64 JSON，内层 Base64 SVG。切换 Mood 时可改变媒体内容，token ID 和所有者仍有各自的查询依据。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow16" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="438" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">一个 token ID 有两条查询路径</text>
+<text x="42" y="92" class="sub bound" data-right="958">把链上所有者记录和媒体展示分开</text>
+<text x="42" y="122" class="row">所有权</text><rect x="42.0" y="136" width="444.0" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="58" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="476.0">合约地址 + tokenId</text><text x="62.0" y="192" class="detail bound" data-right="476.0">共同确定查询对象</text><path d="M490.0 178.0 H508.0" class="edge" marker-end="url(#arrow16)"/><rect x="514.0" y="136" width="444.0" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="515.0" y="149" width="4" height="58" rx="2" fill="#b3dece"/><text x="534.0" y="168" class="heading bound" fill="#135c4c" data-right="948.0">ownerOf(tokenId)</text><text x="534.0" y="192" class="detail bound" data-right="948.0">返回登记的所有者</text><text x="42" y="255" class="row">元数据</text><rect x="42.0" y="269" width="286.6666666666667" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="282" width="4" height="74" rx="2" fill="#b3dece"/><text x="62.0" y="301" class="heading bound" fill="#135c4c" data-right="318.6666666666667">同一个 tokenId</text><text x="62.0" y="325" class="detail bound" data-right="318.6666666666667">调用 tokenURI</text><path d="M332.6666666666667 319.0 H350.6666666666667" class="edge" marker-end="url(#arrow16)"/><rect x="356.6666666666667" y="269" width="286.6666666666667" height="100" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="357.6666666666667" y="282" width="4" height="74" rx="2" fill="#efd8a0"/><text x="376.6666666666667" y="301" class="heading bound" fill="#7c4d13" data-right="633.3333333333334">BasicNft</text><text x="376.6666666666667" y="325" class="detail bound" data-right="633.3333333333334">外部 URI → JSON</text><text x="376.6666666666667" y="347" class="detail bound" data-right="633.3333333333334">JSON 的 image 字段</text><path d="M647.3333333333334 319.0 H665.3333333333334" class="edge" marker-end="url(#arrow16)"/><rect x="671.3333333333334" y="269" width="286.6666666666667" height="100" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="672.3333333333334" y="282" width="4" height="74" rx="2" fill="#d9d0f1"/><text x="691.3333333333334" y="301" class="heading bound" fill="#4a3d7a" data-right="948.0">MoodNft</text><text x="691.3333333333334" y="325" class="detail bound" data-right="948.0">外层 Base64 JSON</text><text x="691.3333333333334" y="347" class="detail bound" data-right="948.0">内层 Base64 SVG</text>
+<rect x="42" y="395" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="417" class="note bound" data-right="950">切换 Mood 时可改变媒体内容，token ID 和所有者仍有各自的查询依据。</text>
+</svg>

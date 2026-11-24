@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 438" width="1000" height="438" role="img" aria-labelledby="title13 desc13">
+<title id="title13">余额读取和充值走不同的请求</title>
+<desc id="desc13">一个刚部署的本地 Fund Me 实例。只读：余额按钮，BrowserProvider；RPC 查询目标地址，直接读原生币余额；控制台，第一次 0，最后 0.003 ETH。写入：Fund 按钮，parseEther(&#x27;0.003&#x27;)；签名确认，signer + fund() 的 ABI；广播和回执，wait(1) 后再读余额。钱包的连接许可与这一笔充值的签名确认各有用途。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow13" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="438" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">余额读取和充值走不同的请求</text>
+<text x="42" y="92" class="sub bound" data-right="958">一个刚部署的本地 Fund Me 实例</text>
+<text x="42" y="122" class="row">只读</text><rect x="42.0" y="136" width="286.6666666666667" height="100" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="74" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="318.6666666666667">余额按钮</text><text x="62.0" y="192" class="detail bound" data-right="318.6666666666667">BrowserProvider</text><path d="M332.6666666666667 186.0 H350.6666666666667" class="edge" marker-end="url(#arrow13)"/><rect x="356.6666666666667" y="136" width="286.6666666666667" height="100" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="357.6666666666667" y="149" width="4" height="74" rx="2" fill="#b3dece"/><text x="376.6666666666667" y="168" class="heading bound" fill="#135c4c" data-right="633.3333333333334">RPC 查询目标地址</text><text x="376.6666666666667" y="192" class="detail bound" data-right="633.3333333333334">直接读原生币余额</text><path d="M647.3333333333334 186.0 H665.3333333333334" class="edge" marker-end="url(#arrow13)"/><rect x="671.3333333333334" y="136" width="286.6666666666667" height="100" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="672.3333333333334" y="149" width="4" height="74" rx="2" fill="#efd8a0"/><text x="691.3333333333334" y="168" class="heading bound" fill="#7c4d13" data-right="948.0">控制台</text><text x="691.3333333333334" y="192" class="detail bound" data-right="948.0">第一次 0</text><text x="691.3333333333334" y="214" class="detail bound" data-right="948.0">最后 0.003 ETH</text><text x="42" y="271" class="row">写入</text><rect x="42.0" y="285" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="298" width="4" height="58" rx="2" fill="#b3dece"/><text x="62.0" y="317" class="heading bound" fill="#135c4c" data-right="318.6666666666667">Fund 按钮</text><text x="62.0" y="341" class="detail bound" data-right="318.6666666666667">parseEther(&#x27;0.003&#x27;)</text><path d="M332.6666666666667 327.0 H350.6666666666667" class="edge" marker-end="url(#arrow13)"/><rect x="356.6666666666667" y="285" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="357.6666666666667" y="298" width="4" height="58" rx="2" fill="#efd8a0"/><text x="376.6666666666667" y="317" class="heading bound" fill="#7c4d13" data-right="633.3333333333334">签名确认</text><text x="376.6666666666667" y="341" class="detail bound" data-right="633.3333333333334">signer + fund() 的 ABI</text><path d="M647.3333333333334 327.0 H665.3333333333334" class="edge" marker-end="url(#arrow13)"/><rect x="671.3333333333334" y="285" width="286.6666666666667" height="84" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="672.3333333333334" y="298" width="4" height="58" rx="2" fill="#d9d0f1"/><text x="691.3333333333334" y="317" class="heading bound" fill="#4a3d7a" data-right="948.0">广播和回执</text><text x="691.3333333333334" y="341" class="detail bound" data-right="948.0">wait(1) 后再读余额</text>
+<rect x="42" y="395" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="417" class="note bound" data-right="950">钱包的连接许可与这一笔充值的签名确认各有用途。</text>
+</svg>

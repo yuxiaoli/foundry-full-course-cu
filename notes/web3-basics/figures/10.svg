@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 422" width="1000" height="422" role="img" aria-labelledby="title10 desc10">
+<title id="title10">从 Forge 测试到本地节点读回</title>
+<desc id="desc10">同一份课程代码，两种可重复的验收。测试循环：Forge 编译，源码、脚本和测试；测试布置，建立实例，写入 777；测试断言，retrieve() 应为 777。本地部署循环：Anvil，本地开发链，ID 31337；脚本广播，返回实际部署地址；Cast，查到 0，写入，再查到 777。测试用 Forge 的隔离环境；验收 RPC 和部署地址时用 Anvil。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="422" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">从 Forge 测试到本地节点读回</text>
+<text x="42" y="92" class="sub bound" data-right="958">同一份课程代码，两种可重复的验收</text>
+<text x="42" y="122" class="row">测试循环</text><rect x="42.0" y="136" width="286.6666666666667" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="58" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="318.6666666666667">Forge 编译</text><text x="62.0" y="192" class="detail bound" data-right="318.6666666666667">源码、脚本和测试</text><path d="M332.6666666666667 178.0 H350.6666666666667" class="edge" marker-end="url(#arrow10)"/><rect x="356.6666666666667" y="136" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="357.6666666666667" y="149" width="4" height="58" rx="2" fill="#b3dece"/><text x="376.6666666666667" y="168" class="heading bound" fill="#135c4c" data-right="633.3333333333334">测试布置</text><text x="376.6666666666667" y="192" class="detail bound" data-right="633.3333333333334">建立实例，写入 777</text><path d="M647.3333333333334 178.0 H665.3333333333334" class="edge" marker-end="url(#arrow10)"/><rect x="671.3333333333334" y="136" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="672.3333333333334" y="149" width="4" height="58" rx="2" fill="#efd8a0"/><text x="691.3333333333334" y="168" class="heading bound" fill="#7c4d13" data-right="948.0">测试断言</text><text x="691.3333333333334" y="192" class="detail bound" data-right="948.0">retrieve() 应为 777</text><text x="42" y="255" class="row">本地部署循环</text><rect x="42.0" y="269" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="282" width="4" height="58" rx="2" fill="#b3dece"/><text x="62.0" y="301" class="heading bound" fill="#135c4c" data-right="318.6666666666667">Anvil</text><text x="62.0" y="325" class="detail bound" data-right="318.6666666666667">本地开发链，ID 31337</text><path d="M332.6666666666667 311.0 H350.6666666666667" class="edge" marker-end="url(#arrow10)"/><rect x="356.6666666666667" y="269" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="357.6666666666667" y="282" width="4" height="58" rx="2" fill="#efd8a0"/><text x="376.6666666666667" y="301" class="heading bound" fill="#7c4d13" data-right="633.3333333333334">脚本广播</text><text x="376.6666666666667" y="325" class="detail bound" data-right="633.3333333333334">返回实际部署地址</text><path d="M647.3333333333334 311.0 H665.3333333333334" class="edge" marker-end="url(#arrow10)"/><rect x="671.3333333333334" y="269" width="286.6666666666667" height="84" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="672.3333333333334" y="282" width="4" height="58" rx="2" fill="#d9d0f1"/><text x="691.3333333333334" y="301" class="heading bound" fill="#4a3d7a" data-right="948.0">Cast</text><text x="691.3333333333334" y="325" class="detail bound" data-right="948.0">查到 0，写入，再查到 777</text>
+<rect x="42" y="379" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="401" class="note bound" data-right="950">测试用 Forge 的隔离环境；验收 RPC 和部署地址时用 Anvil。</text>
+</svg>

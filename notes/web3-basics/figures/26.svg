@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 422" width="1000" height="422" role="img" aria-labelledby="title26 desc26">
+<title id="title26">同一条性质在多个动作之后复查</title>
+<desc id="desc26">以 DSC 抵押价值与总供应为例。有状态测试轨迹：存入抵押，检查抵押价值 ≥ 总供应；铸造 DSC，再检查同一性质；赎回抵押，再查合法动作后的结果。单独的防御回归：给出陈旧报价，设置 mock 与时间；断言应拒绝，验证指定错误和边界。测试证据需写明动作范围、回退策略、序列深度和实际断言。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow26" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="422" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">同一条性质在多个动作之后复查</text>
+<text x="42" y="92" class="sub bound" data-right="958">以 DSC 抵押价值与总供应为例</text>
+<text x="42" y="122" class="row">有状态测试轨迹</text><rect x="42.0" y="136" width="286.6666666666667" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="58" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="318.6666666666667">存入抵押</text><text x="62.0" y="192" class="detail bound" data-right="318.6666666666667">检查抵押价值 ≥ 总供应</text><path d="M332.6666666666667 178.0 H350.6666666666667" class="edge" marker-end="url(#arrow26)"/><rect x="356.6666666666667" y="136" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="357.6666666666667" y="149" width="4" height="58" rx="2" fill="#b3dece"/><text x="376.6666666666667" y="168" class="heading bound" fill="#135c4c" data-right="633.3333333333334">铸造 DSC</text><text x="376.6666666666667" y="192" class="detail bound" data-right="633.3333333333334">再检查同一性质</text><path d="M647.3333333333334 178.0 H665.3333333333334" class="edge" marker-end="url(#arrow26)"/><rect x="671.3333333333334" y="136" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="672.3333333333334" y="149" width="4" height="58" rx="2" fill="#efd8a0"/><text x="691.3333333333334" y="168" class="heading bound" fill="#7c4d13" data-right="948.0">赎回抵押</text><text x="691.3333333333334" y="192" class="detail bound" data-right="948.0">再查合法动作后的结果</text><text x="42" y="255" class="row">单独的防御回归</text><rect x="42.0" y="269" width="444.0" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="282" width="4" height="58" rx="2" fill="#b3dece"/><text x="62.0" y="301" class="heading bound" fill="#135c4c" data-right="476.0">给出陈旧报价</text><text x="62.0" y="325" class="detail bound" data-right="476.0">设置 mock 与时间</text><path d="M490.0 311.0 H508.0" class="edge" marker-end="url(#arrow26)"/><rect x="514.0" y="269" width="444.0" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="282" width="4" height="58" rx="2" fill="#efd8a0"/><text x="534.0" y="301" class="heading bound" fill="#7c4d13" data-right="948.0">断言应拒绝</text><text x="534.0" y="325" class="detail bound" data-right="948.0">验证指定错误和边界</text>
+<rect x="42" y="379" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="401" class="note bound" data-right="950">测试证据需写明动作范围、回退策略、序列深度和实际断言。</text>
+</svg>

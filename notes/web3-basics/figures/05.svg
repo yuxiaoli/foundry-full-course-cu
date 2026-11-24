@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 422" width="1000" height="422" role="img" aria-labelledby="title05 desc05">
+<title id="title05">Rollup 怎样把多笔交易交给一份结算</title>
+<desc id="desc05">以太坊 L1 区块空间有限时的批次路径。L2 执行：多个用户提交，一批独立的付款请求；排序器，确定批次顺序；执行与聚合，更新 L2 状态，形成批次。L1 核验和结算：数据及状态承诺，需要能验证或重建的资料；按机制验证，争议证明或有效性证明；结算及后续确认，读具体实现的时间与信任条件。排序器接收、数据发布与最终可接受是不同的检查点。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow05" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="422" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">Rollup 怎样把多笔交易交给一份结算</text>
+<text x="42" y="92" class="sub bound" data-right="958">以太坊 L1 区块空间有限时的批次路径</text>
+<text x="42" y="122" class="row">L2 执行</text><rect x="42.0" y="136" width="286.6666666666667" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="58" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="318.6666666666667">多个用户提交</text><text x="62.0" y="192" class="detail bound" data-right="318.6666666666667">一批独立的付款请求</text><path d="M332.6666666666667 178.0 H350.6666666666667" class="edge" marker-end="url(#arrow05)"/><rect x="356.6666666666667" y="136" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="357.6666666666667" y="149" width="4" height="58" rx="2" fill="#b3dece"/><text x="376.6666666666667" y="168" class="heading bound" fill="#135c4c" data-right="633.3333333333334">排序器</text><text x="376.6666666666667" y="192" class="detail bound" data-right="633.3333333333334">确定批次顺序</text><path d="M647.3333333333334 178.0 H665.3333333333334" class="edge" marker-end="url(#arrow05)"/><rect x="671.3333333333334" y="136" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="672.3333333333334" y="149" width="4" height="58" rx="2" fill="#efd8a0"/><text x="691.3333333333334" y="168" class="heading bound" fill="#7c4d13" data-right="948.0">执行与聚合</text><text x="691.3333333333334" y="192" class="detail bound" data-right="948.0">更新 L2 状态，形成批次</text><text x="42" y="255" class="row">L1 核验和结算</text><rect x="42.0" y="269" width="286.6666666666667" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="43.0" y="282" width="4" height="58" rx="2" fill="#b3dece"/><text x="62.0" y="301" class="heading bound" fill="#135c4c" data-right="318.6666666666667">数据及状态承诺</text><text x="62.0" y="325" class="detail bound" data-right="318.6666666666667">需要能验证或重建的资料</text><path d="M332.6666666666667 311.0 H350.6666666666667" class="edge" marker-end="url(#arrow05)"/><rect x="356.6666666666667" y="269" width="286.6666666666667" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="357.6666666666667" y="282" width="4" height="58" rx="2" fill="#efd8a0"/><text x="376.6666666666667" y="301" class="heading bound" fill="#7c4d13" data-right="633.3333333333334">按机制验证</text><text x="376.6666666666667" y="325" class="detail bound" data-right="633.3333333333334">争议证明或有效性证明</text><path d="M647.3333333333334 311.0 H665.3333333333334" class="edge" marker-end="url(#arrow05)"/><rect x="671.3333333333334" y="269" width="286.6666666666667" height="84" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="672.3333333333334" y="282" width="4" height="58" rx="2" fill="#d9d0f1"/><text x="691.3333333333334" y="301" class="heading bound" fill="#4a3d7a" data-right="948.0">结算及后续确认</text><text x="691.3333333333334" y="325" class="detail bound" data-right="948.0">读具体实现的时间与信任条件</text>
+<rect x="42" y="379" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="401" class="note bound" data-right="950">排序器接收、数据发布与最终可接受是不同的检查点。</text>
+</svg>

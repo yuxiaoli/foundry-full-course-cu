@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 289" width="1000" height="289" role="img" aria-labelledby="title19 desc19">
+<title id="title19">把总费用逐层拆成报告口径</title>
+<desc id="desc19">自拟数字，用来演练历史报告的计算方法。同一窗口同一单位：总费用 100，先找谁实际支付了；给供给方 80，例如 LP 或创作者；协议收入 20，100 − 80；口径收益 −5，20 − 激励 25。链下支出、受益者归类和统计范围另外说明。</desc>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+.main{font-size:33px;font-weight:700;fill:#102236}
+.sub{font-size:17px;fill:#4a6077}
+.row{font-size:17px;font-weight:700;fill:#45617a}
+.heading{font-size:23px;font-weight:700} .detail{font-size:17px;fill:#1d3448}
+.note{font-size:16px;fill:#334e63}
+.edge,.fork{fill:none;stroke:#70869b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fork{stroke-dasharray:3 3;opacity:.8}
+</style>
+<defs><marker id="arrow19" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#70869b"/></marker></defs>
+<rect width="1000" height="289" rx="22" fill="#f8fbfe" stroke="#d5e0eb"/>
+<rect x="42" y="26" width="40" height="5" rx="2.5" fill="#2c7298"/>
+<text x="42" y="66" class="main bound" data-right="958">把总费用逐层拆成报告口径</text>
+<text x="42" y="92" class="sub bound" data-right="958">自拟数字，用来演练历史报告的计算方法</text>
+<text x="42" y="122" class="row">同一窗口同一单位</text><rect x="42.0" y="136" width="208.0" height="84" rx="14" fill="#eaf5ff" stroke="#bed8f5"/><rect x="43.0" y="149" width="4" height="58" rx="2" fill="#bed8f5"/><text x="62.0" y="168" class="heading bound" fill="#144d7b" data-right="240.0">总费用 100</text><text x="62.0" y="192" class="detail bound" data-right="240.0">先找谁实际支付了</text><path d="M254.0 178.0 H272.0" class="edge" marker-end="url(#arrow19)"/><rect x="278.0" y="136" width="208.0" height="84" rx="14" fill="#e9f7f2" stroke="#b3dece"/><rect x="279.0" y="149" width="4" height="58" rx="2" fill="#b3dece"/><text x="298.0" y="168" class="heading bound" fill="#135c4c" data-right="476.0">给供给方 80</text><text x="298.0" y="192" class="detail bound" data-right="476.0">例如 LP 或创作者</text><path d="M490.0 178.0 H508.0" class="edge" marker-end="url(#arrow19)"/><rect x="514.0" y="136" width="208.0" height="84" rx="14" fill="#fff4d9" stroke="#efd8a0"/><rect x="515.0" y="149" width="4" height="58" rx="2" fill="#efd8a0"/><text x="534.0" y="168" class="heading bound" fill="#7c4d13" data-right="712.0">协议收入 20</text><text x="534.0" y="192" class="detail bound" data-right="712.0">100 − 80</text><path d="M726.0 178.0 H744.0" class="edge" marker-end="url(#arrow19)"/><rect x="750.0" y="136" width="208.0" height="84" rx="14" fill="#efeefd" stroke="#d9d0f1"/><rect x="751.0" y="149" width="4" height="58" rx="2" fill="#d9d0f1"/><text x="770.0" y="168" class="heading bound" fill="#4a3d7a" data-right="948.0">口径收益 −5</text><text x="770.0" y="192" class="detail bound" data-right="948.0">20 − 激励 25</text>
+<rect x="42" y="246" width="916" height="34" rx="8" fill="#edf2f7"/>
+<text x="55" y="268" class="note bound" data-right="950">链下支出、受益者归类和统计范围另外说明。</text>
+</svg>
