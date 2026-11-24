@@ -309,6 +309,7 @@ async function compile(page) {
 }
 
 const compiled = await Promise.all(pages.map(compile));
+const bookTitle = compiled[0].page.title;
 const exerciseCount = compiled.reduce((sum, item) => sum + item.exercises, 0);
 if (exerciseCount !== 88) throw new Error('Expected 88 exercises, found ' + exerciseCount);
 
@@ -334,7 +335,7 @@ for (const { page, toc, content } of compiled) {
   const previous = number > 0 ? chapters[number - 1] : undefined;
   const next = page.kind === 'home' ? chapters[0] : number >= 0 ? chapters[number + 1] : undefined;
   const canonical = new URL(page.url, canonicalOrigin).href;
-  const html = renderPage({ base, page, groups, toc, content, previous, next, canonical });
+  const html = renderPage({ base, bookTitle, page, groups, toc, content, previous, next, canonical });
   const dir = join(output, page.folder);
   await mkdir(dir, { recursive: true });
   await writeFile(join(dir, 'index.html'), html, 'utf8');

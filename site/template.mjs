@@ -52,15 +52,15 @@ function chapterPager(previous, next) {
   </nav>`;
 }
 
-export function renderPage({ base, page, groups, toc, content, previous, next, canonical }) {
+export function renderPage({ base, bookTitle, page, groups, toc, content, previous, next, canonical }) {
   const isHome = page.kind === "home";
   const isChapter = page.kind === "chapter";
   const heading = isChapter ? `第 ${page.number} 章 · ${page.title}` : page.title;
   const first = groups[0]?.chapters[0];
-  const title = isHome ? heading : `${heading}｜Web3 入门书`;
+  const title = isHome ? heading : `${heading}｜${bookTitle}`;
   const description = isHome
     ? "从比特币与共享账本学起，读懂以太坊交易、智能合约、链上资产与治理。"
-    : heading + "，简体中文 Web3 入门书。";
+    : `${heading}，《${bookTitle}》简体中文版。`;
   const nav = isHome ? "" : chapterNav(base, page, groups);
   const sectionLinks = tocList(toc);
   return `<!doctype html>
@@ -85,7 +85,7 @@ export function renderPage({ base, page, groups, toc, content, previous, next, c
   <a class="skip-link" href="#main-content">跳到正文</a>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="${escapeHtml(base)}"><span class="brand-icon">${icon("brand")}</span><span class="brand-text">Web3 入门书</span></a>
+      <a class="brand" href="${escapeHtml(base)}"><span class="brand-icon">${icon("brand")}</span><span class="brand-text">${escapeHtml(bookTitle)}</span></a>
       <div class="top-actions">
         ${!isHome ? `<button type="button" class="nav-toggle" data-nav-open aria-controls="mobile-nav" aria-haspopup="dialog">${icon("menu")} <span>目录</span></button>` : ""}
         <button type="button" class="search-toggle" data-search-open aria-controls="search-dialog" aria-haspopup="dialog">${icon("search")} <span>搜索</span></button>
