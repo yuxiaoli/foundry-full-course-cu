@@ -57,7 +57,5 @@
 ## 来源
 
 - Gas 单位、费用和交易执行顺序。[Updraft · Gas in Depth，L1–81](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/11-gas-in-depth/%2Bpage.md#L1-L81) · [Updraft · The Lifecycle of a Transaction，L1–79](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/12-the-lifecycle-of-a-transaction/%2Bpage.md#L1-L79)
-- Ethereum’s business model 的 Gas 算例（pp. 20–21，L518–545）和 Cryptographic Hash Function 的两种 nonce 语境（p. 7，L136–156）。金额和回执为自拟。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md)
+- Ethereum’s business model 的 Gas 算例（pp. 20–21，L518–545）和 Cryptographic Hash Function 的两种 nonce 语境（p. 7，L136–156）。金额和回执为自拟。《Web3 Fundamentals》
 - 类型化交易、费率、回执状态和链 ID 的规范来源。[EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) · [EIP-658](https://eips.ethereum.org/EIPS/eip-658) · [EIP-155](https://eips.ethereum.org/EIPS/eip-155) · [Ethereum JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-03)

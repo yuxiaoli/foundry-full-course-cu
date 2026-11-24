@@ -36,7 +36,7 @@ EIP-712 定义类型化结构数据（typed structured data）的散列和签名
 
 按[第 12 章的方法读测试](../03-contracts-and-foundry/12-testing-external-dependencies.md)，先区分夹具、执行和断言。课程的 `MerkleAirdrop.t.sol` 用 `makeAddrAndKey("user")` 生成临时用户。测试辅助函数 `signMessage` 通过 `vm.sign` 签 `getMessageHash` 给出的摘要。随后 `vm.prank(gasPayer)` 设置下一次调用的发送者，测试用预置证明让这个代付地址提交，最后断言 `endingBalance - startingBalance == amountToCollect`。夹具金额是 `25 * 1e18` 个最小单位。测试读取的余额属于 `user`，这就是代付场景的验证点。 [课程测试 L18–60](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/test/unit/MerkleAirdrop.t.sol#L18-L60)
 
-在课程项目提交 `bd12de21112b` 的项目根目录，安装该提交记录的 Git 子模块并使用普通 Foundry，可用以下选择器只运行领取用例。项目的 `foundry.toml` 固定 Solidity `0.8.24`。本书用 Foundry `v1.3.1` 运行该命令，`testUsersCanClaim` 通过。 [编译配置](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/foundry.toml) · [依赖清单](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/.gitmodules)
+在课程项目提交 `bd12de21112b` 的项目根目录，安装该提交记录的 Git 子模块并使用普通 Foundry，可用以下选择器只运行领取用例。项目的 `foundry.toml` 固定 Solidity `0.8.24`。 [编译配置](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/foundry.toml) · [依赖清单](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/.gitmodules)
 
 ```bash
 forge test --match-test testUsersCanClaim
@@ -59,8 +59,6 @@ forge test --match-test testUsersCanClaim
 
 ## 来源
 
-- 《Web3 Fundamentals》，Airdrop（第 36–37 页，Markdown L902–938），用于名单、快照和领取的场景。 [本地书稿](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》，Airdrop（第 36–37 页），用于名单、快照和领取的场景。
 - Cyfrin 课程 fork，Advanced Foundry §5 的 Merkle Airdrop and Signatures。 [固定课程索引 L2383–2440](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L2383-L2440) · [签名标准课文 L60–193](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/advanced-foundry/5-merkle-airdrop/11-signature-standards/%2Bpage.md#L60-L193)
 - 课程项目 `foundry-merkle-airdrop-cu` 固定源码与测试，确认叶子格式、检查顺序与代提交路径。 [MerkleAirdrop.sol](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/src/MerkleAirdrop.sol) · [MerkleAirdrop.t.sol](https://github.com/Cyfrin/foundry-merkle-airdrop-cu/blob/bd12de21112b7fcde98868e37bce9b14affd3f57/test/unit/MerkleAirdrop.t.sol)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-22)

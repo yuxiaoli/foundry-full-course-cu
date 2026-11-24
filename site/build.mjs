@@ -39,7 +39,7 @@ const markdown = new MarkdownIt({
 // closing delimiter before a Han word without changing Markdown or code spans.
 markdown.inline.ruler.before('emphasis', 'bilingual_term', (state, silent) => {
   if (state.src.charCodeAt(state.pos) !== 0x2a) return false;
-  const term = /^\*\*([\p{Script=Han}][\p{L}\p{N} -]*（[A-Za-z][A-Za-z0-9 ,_-]*）)\*\*/u
+  const term = /^\*\*([\p{L}\p{N}][\p{L}\p{N} -]*（[A-Za-z][A-Za-z0-9 ,，_-]*）)\*\*/u
     .exec(state.src.slice(state.pos, state.posMax));
   if (!term) return false;
   if (!silent) {
@@ -63,7 +63,7 @@ function makeGroups(index) {
       current = { title: line.slice(3), chapters: [] };
       groups.push(current);
     }
-    const row = /^- \[(\d{2}) · ([^\]]+)\]\(\.\/([a-z\d-]+\/[a-z\d-]+\.md)\)$/.exec(line);
+    const row = /^- \[(\d{2}[A-Z]?) · ([^\]]+)\]\(\.\/([a-z\d-]+\/[a-z\d-]+\.md)\)$/.exec(line);
     if (row) {
       const [, number, title, file] = row;
       if (!current) throw new Error('Chapter ' + number + ' must belong to a group.');
@@ -79,22 +79,21 @@ function makeGroups(index) {
 const index = await readBook('README.md');
 const groups = makeGroups(index);
 const chapters = groups.flatMap(group => group.chapters);
-const expectedNumbers = Array.from({ length: 26 }, (_, i) => String(i + 1).padStart(2, '0')).join(',');
+const illustratedNumbers = Array.from({ length: 26 }, (_, i) => String(i + 1).padStart(2, '0'));
+const expectedNumbers = ['00', ...illustratedNumbers.slice(0, 2), '02A', ...illustratedNumbers.slice(2, 14), '14A', ...illustratedNumbers.slice(14)].join(',');
 if (groups.length !== 5 || chapters.map(row => row.number).join(',') !== expectedNumbers
     || groups[4].chapters[0].number !== '22') {
-  throw new Error('The index must list 21 main chapters and five optional chapters in learning order.');
+  throw new Error('The index must list all foundation, main and five optional chapters in reading order.');
 }
 const pages = [
   { kind: 'home', file: 'README.md', folder: '', url: base, section: '阅读索引' },
   ...chapters,
-  { kind: 'reference', file: 'figures/README.md', folder: 'figures/', url: base + 'figures/', section: '资料与核查' },
-  { kind: 'reference', file: 'VALIDATION.md', folder: 'validation/', url: base + 'validation/', section: '资料与核查' },
 ];
 const pageByFile = new Map(pages.map(page => [page.file, page]));
 if (pageByFile.size !== pages.length) throw new Error('Duplicate page in the Markdown index.');
 
 const figureByFile = new Map();
-for (const number of expectedNumbers.split(',')) {
+for (const number of illustratedNumbers) {
   const file = 'figures/' + number + '.svg';
   const svg = await readBook(file);
   const tag = /<svg\b[^>]+>/i.exec(svg)?.[0] ?? '';
@@ -198,14 +197,6 @@ function foldExercises(article, page) {
   return exercises;
 }
 
-function noteCitation(link, reference, hash) {
-  const citation = link.ownerDocument.createElement('span');
-  citation.className = 'local-citation';
-  citation.title = '仓库资料 · ' + reference + hash;
-  citation.append(...link.childNodes);
-  link.replaceWith(citation);
-}
-
 function rewriteLinks(article, page) {
   for (const element of article.querySelectorAll('a[href], img[src]')) {
     const attribute = element.tagName === 'IMG' ? 'src' : 'href';
@@ -232,11 +223,6 @@ function rewriteLinks(article, page) {
     const targetUrl = pageByFile.get(target)?.url ?? asset?.url;
     if (targetUrl) {
       element.setAttribute('href', targetUrl + hash);
-      continue;
-    }
-    if (/^\.\.\/\.\.\/(?:refs|planning)\//.test(target) || target === 'PROGRESS.md') {
-      const reference = target === 'PROGRESS.md' ? 'notes/web3-basics/PROGRESS.md' : target.slice(6);
-      noteCitation(element, reference, hash);
       continue;
     }
     throw new Error('Unmapped link in ' + page.file + ': ' + value);
@@ -312,7 +298,8 @@ async function compile(page) {
   page.title ??= heading.textContent;
   heading.remove();
   const exercises = foldExercises(article, page);
-  const toc = annotateHeadings(article, anchors);
+  const headings = annotateHeadings(article, anchors);
+  const toc = page.kind === 'chapter' ? headings : [];
   rewriteLinks(article, page);
   annotateFigures(article);
   wrapTables(article);
@@ -323,7 +310,7 @@ async function compile(page) {
 
 const compiled = await Promise.all(pages.map(compile));
 const exerciseCount = compiled.reduce((sum, item) => sum + item.exercises, 0);
-if (exerciseCount !== 79) throw new Error('Expected 79 exercises, found ' + exerciseCount);
+if (exerciseCount !== 88) throw new Error('Expected 88 exercises, found ' + exerciseCount);
 
 const existingOutput = await lstat(output).catch(error => {
   if (error.code !== 'ENOENT') throw error;
@@ -357,5 +344,9 @@ await writeFile(join(output, 'search-index.json'), JSON.stringify({
     title: page.title, url: page.url, section: page.section, blocks,
   })),
 }), 'utf8');
+await writeFile(join(output, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  pages.map(({ url }) => '  <url><loc>' + new URL(url, canonicalOrigin).href + '</loc></url>').join('\n') +
+  '\n</urlset>\n', 'utf8');
 await writeFile(join(output, '.nojekyll'), '');
 console.log('Built ' + chapters.length + ' chapters, ' + exerciseCount + ' answers and ' + figureByFile.size + ' figures for ' + base + '.');

@@ -27,7 +27,7 @@
 
 ## 从固定版本运行第一项测试
 
-核查环境用了 Foundry `v1.3.1` 和 Solidity `0.8.19`。Foundry 安装后先执行 `forge --version`、`anvil --version`、`cast --version`，确认工具来自同一套安装。Windows 上可在 Git Bash 或 WSL 使用 Foundryup，也可取官方发布的 Windows 二进制，解压后从 PowerShell 调用；下面的命令块使用 Bash 语法。官方安装入口和具体版本见篇末。
+阅读这组命令时，可使用 Foundry `v1.3.1` 与项目固定的 Solidity `0.8.19`。Foundry 安装后先执行 `forge --version`、`anvil --version`、`cast --version`，确认工具来自同一套安装。Windows 上可在 Git Bash 或 WSL 使用 Foundryup，也可取官方发布的 Windows 二进制，解压后从 PowerShell 调用；下面的命令块使用 Bash 语法。官方安装入口和具体版本见篇末。
 
 在你用来做实验的目录取得独立的项目副本。课程的 `forge-std` 还引用了 `ds-test`，递归初始化会拉到对应提交。
 
@@ -39,7 +39,7 @@ git submodule update --init --recursive
 forge test --match-path test/SimpleStorageTest.t.sol
 ```
 
-最后一步编译并运行测试。首次编译可能需要下载 Solidity 编译器；若提示找不到 `ds-test/test.sol`，在当前项目根目录核对递归子模块状态。这里使用项目固定的 `forge-std` 提交 `fc560fa34fa12a335a50c35d92e55a6628ca467c`。Windows 若报路径过长，可从短路径的实验目录执行，或在子模块命令加 `git -c core.longpaths=true`。用当前标签运行本章命令时，应看到 `testStoreNumber` 与 `testCreatePerson` 两个测试。本书用上述 Foundry 版本实跑，2 项通过。
+最后一步编译并运行测试。首次编译可能需要下载 Solidity 编译器；若提示找不到 `ds-test/test.sol`，在当前项目根目录核对递归子模块状态。这里使用项目固定的 `forge-std` 提交 `fc560fa34fa12a335a50c35d92e55a6628ca467c`。Windows 若报路径过长，可从短路径的实验目录执行，或在子模块命令加 `git -c core.longpaths=true`。用当前标签运行本章命令时，应看到 `testStoreNumber` 与 `testCreatePerson` 两个测试。
 
 课程的 `setUp()` 实例化 `DeploySimpleStorage`，执行 `run()`，为测试得到一份干净的 `simpleStorage`。`testStoreNumber` 可以按三个动作读：
 
@@ -91,7 +91,7 @@ cast call "$ADDR" "retrieve()(uint256)" --rpc-url "$RPC"
 
 如果第三个动作异常，先看命令使用的 RPC、地址以及第一次读取结果。确认地址上确实由本地部署添加了代码，再查看交易状态。下一章把这个循环用于[接收 ETH 的合约](./11-fund-me-and-price-feeds.md)，届时会看到更多输入、角色和依赖。
 
-本书用 Foundry `v1.3.1` 和本机 Anvil 实跑部署、读取、写入和再次读取，观察到 `0 → 777`。
+初次读取的预期值是 `0`；写入后再次读取，预期得到 `777`。
 
 ## 常见误区
 
@@ -110,6 +110,4 @@ cast call "$ADDR" "retrieve()(uint256)" --rpc-url "$RPC"
 
 - 课程 fork [README.md · Foundry Fundamentals §1，L1072–1199](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L1072-L1199) 与项目 [README.md · Setup / Usage](https://github.com/Cyfrin/foundry-simple-storage-cu/blob/5292eaf09b510b0f0ad168b7f90cfc0a11cbf08f/README.md#L59-L79)。
 - 固定项目中的 [foundry.toml](https://github.com/Cyfrin/foundry-simple-storage-cu/blob/5292eaf09b510b0f0ad168b7f90cfc0a11cbf08f/foundry.toml#L1-L6)、[DeploySimpleStorage.s.sol](https://github.com/Cyfrin/foundry-simple-storage-cu/blob/5292eaf09b510b0f0ad168b7f90cfc0a11cbf08f/script/DeploySimpleStorage.s.sol#L1-L17) 与 [SimpleStorageTest.t.sol](https://github.com/Cyfrin/foundry-simple-storage-cu/blob/5292eaf09b510b0f0ad168b7f90cfc0a11cbf08f/test/SimpleStorageTest.t.sol#L1-L36)。
-- [Foundry 官方安装文档](https://www.getfoundry.sh/introduction/installation) 与 [v1.3.1 发布页](https://github.com/foundry-rs/foundry/releases/tag/v1.3.1)，用于安装、版本与工具帮助。关于为什么部署的程序能被多次调用，可回看 [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md) 的 Smart Contracts（pp. 38–39，L962–1007）。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-10)
+- [Foundry 官方安装文档](https://www.getfoundry.sh/introduction/installation) 与 [v1.3.1 发布页](https://github.com/foundry-rs/foundry/releases/tag/v1.3.1)，用于安装、版本与工具帮助。关于为什么部署的程序能被多次调用，可回看 《Web3 Fundamentals》 的 Smart Contracts（pp. 38–39，L962–1007）。

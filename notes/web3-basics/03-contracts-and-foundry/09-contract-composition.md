@@ -70,7 +70,7 @@ Solidity 的类型信息让 `listOfSimpleStorageContracts[index].store(value)` �
 
 在另一实例上部署 `AddFiveStorage`，调用 `store(7)`，读回 12。函数的调用形状仍是 `store(uint256)`，结果由目标代码决定。部署派生合约时也会获得独立地址和状态。这样的继承（inheritance）在编译时组合定义，工厂与 A 的对话则是已经部署的地址之间的调用。下一章将把手工观察改成[可重复的测试](./10-local-foundry-loop.md)。
 
-用课程的三份原始源码在本地 EVM 复跑，Solidity `0.8.19` 下读到 A 为 777、B 为 0，派生实例 `store(7)` 后读到 12。
+用 Solidity `0.8.19` 运行示例时，先读取 A 的 777 与 B 的 0，再对派生实例调用 `store(7)`，预期读到 12。
 
 ## 常见误区
 
@@ -89,6 +89,4 @@ Solidity 的类型信息让 `listOfSimpleStorageContracts[index].store(value)` �
 
 - [Cyfrin/remix-storage-factory-cu · StorageFactory.sol，L7–32](https://github.com/Cyfrin/remix-storage-factory-cu/blob/18957a919d245c59e445292214a846ca2cfa2486/StorageFactory.sol#L7-L32)、[SimpleStorage.sol，L9–33](https://github.com/Cyfrin/remix-storage-factory-cu/blob/18957a919d245c59e445292214a846ca2cfa2486/SimpleStorage.sol#L9-L33) 和 [AddFiveStorage.sol，L3–11](https://github.com/Cyfrin/remix-storage-factory-cu/blob/18957a919d245c59e445292214a846ca2cfa2486/AddFiveStorage.sol#L3-L11) 支撑实例、人员记录和覆写。
 - 课程 fork [README.md · Memory, Storage, Calldata，L768–779](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L768-L779) 及 [Storage Factory 与继承，L811–846](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L811-L846)。编码术语对照 [Solidity 0.8.19 · ABI Specification](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，The Tools · Smart Contracts（pp. 38–39，L962–1007），用于执行已部署规则的概念背景。具体署名、数据位置和调用字段以课程代码与 Solidity 规范为准。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-09)
+- 《Web3 Fundamentals》，The Tools · Smart Contracts（pp. 38–39，L962–1007），用于执行已部署规则的概念背景。具体署名、数据位置和调用字段以课程代码与 Solidity 规范为准。

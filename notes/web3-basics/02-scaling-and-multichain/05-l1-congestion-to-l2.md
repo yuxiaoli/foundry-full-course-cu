@@ -46,7 +46,5 @@
 ## 来源
 
 - 扩容动机、交易批次、排序器和阶段观察。[Updraft · L1s, L2s and Rollups，L1–65](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/6-scalability/2-l1s-l2s-and-rollups/%2Bpage.md#L1-L65) · [Updraft · Centralized Sequencers，L1–29](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/6-scalability/3-centralized-sequencers/%2Bpage.md#L1-L29) · [Updraft · Rollup Stages，L1–53](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/6-scalability/4-rollup-stages/%2Bpage.md#L1-L53)
-- Scalability、Roll-Ups 和 Sidechains（pp. 8–11，L162–264）提供扩容及批处理的教学背景。四笔社区付款是自拟情境。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md)
+- Scalability、Roll-Ups 和 Sidechains（pp. 8–11，L162–264）提供扩容及批处理的教学背景。四笔社区付款是自拟情境。《Web3 Fundamentals》
 - 对照官方资料核实两类验证与数据发布。[Ethereum · Optimistic Rollups](https://ethereum.org/developers/docs/scaling/optimistic-rollups/) · [Ethereum · Zero-knowledge Rollups](https://ethereum.org/developers/docs/scaling/zk-rollups/) · [Ethereum · Data Availability](https://ethereum.org/developers/docs/data-availability/)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-05)

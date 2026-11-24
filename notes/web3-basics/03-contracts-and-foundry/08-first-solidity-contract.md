@@ -78,7 +78,5 @@ contract SimpleStorageMini {
 ## 来源
 
 - 课程 fork 的 [README.md · Solidity 101, Simple Storage，L704–803](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L704-L803) 列出编译、Solidity 基础、部署和 EVM 回顾。代码对照 [Cyfrin/remix-simple-storage-cu · SimpleStorage.sol，L4–29](https://github.com/Cyfrin/remix-simple-storage-cu/blob/0448e31f104f4833168cbd001a018784c7d358c0/SimpleStorage.sol#L4-L29)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，The Tools · Smart Contracts（pp. 38–39，L962–1007），用于理解发布程序与可重复调用。本章代码与按钮实验是针对课程最小案例的自写版本。
+- 《Web3 Fundamentals》，The Tools · Smart Contracts（pp. 38–39，L962–1007），用于理解发布程序与可重复调用。本章代码与按钮实验是针对课程最小案例的自写版本。
 - 只读调用及执行环境术语对照 [Ethereum · Transactions](https://ethereum.org/developers/docs/transactions/) 与 [Remix 官方文档 · Deploy & Run Transactions](https://remix-ide.readthedocs.io/en/latest/run.html)。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-08)

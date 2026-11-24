@@ -50,7 +50,7 @@ Foundry 的测试辅助调用（cheatcode）改变测试执行环境。课程里
 
 ## 本地复现
 
-在独立副本中检出下列提交，初始化递归依赖。核查采用 Foundry `v1.3.1`、Solidity `0.8.19`。本地默认分支会创建 mock，无需远端价格 RPC；某些夹具显式跳过 ZKsync，迁移测试前读其修饰器。
+在独立副本中检出下列提交，初始化递归依赖。课程示例可使用 Foundry `v1.3.1` 与 Solidity `0.8.19`。本地默认分支会创建 mock，无需远端价格 RPC；某些夹具显式跳过 ZKsync，迁移测试前读其修饰器。
 
 ```bash
 git clone https://github.com/Cyfrin/foundry-fund-me-cu
@@ -61,7 +61,7 @@ forge test --match-path test/unit/FundMeTest.t.sol
 forge test --match-path test/integration/InteractionsTest.t.sol
 ```
 
-核查目录中单元文件 7 项通过，集成文件 1 项通过。可以用 `forge test --match-test testOnlyOwnerCanWithdraw -vv` 集中观察权限检查。课堂两报价练习可以在另一个测试文件实现，先按实际条目取得 mock，再分别重置状态执行 A、B，避免第一个断言的余额影响第二个。浏览器从哪里读余额、怎样发起同一款操作见[第 13 章](./13-wallet-to-dapp.md)；异步回调用[第 14 章](./14-raffle-async-events.md)的例子。
+可以用 `forge test --match-test testOnlyOwnerCanWithdraw -vv` 集中观察权限检查。课堂两报价练习可以在另一个测试文件实现，先按实际条目取得 mock，再分别重置状态执行 A、B，避免第一个断言的余额影响第二个。浏览器从哪里读余额、怎样发起同一款操作见[第 13 章](./13-wallet-to-dapp.md)；异步回调用[第 14 章](./14-raffle-async-events.md)的例子。
 
 ## 常见误区
 
@@ -80,6 +80,4 @@ forge test --match-path test/integration/InteractionsTest.t.sol
 
 - [Foundry Fund Me · HelperConfig.s.sol](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/script/HelperConfig.s.sol#L7-L87)、[DeployFundMe.s.sol](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/script/DeployFundMe.s.sol#L7-L22)、[foundry.toml](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/foundry.toml#L1-L17)。
 - 测试证据 [FundMeTest.t.sol，L28–138](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/test/unit/FundMeTest.t.sol#L28-L138) 和 [InteractionsTest.t.sol，L27–57](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/test/integration/InteractionsTest.t.sol#L27-L57)。课程补读 [Updraft · Running tests on chains forks，L9–89](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/foundry/2-foundry-fund-me/10-running-tests-on-chains-forks/%2Bpage.md#L9-L89)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，Oracles（pp. 42–43，L1079–1099）。用于解释模拟对象所代表的外部数据角色。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-12)
+- 《Web3 Fundamentals》，Oracles（pp. 42–43，L1079–1099）。用于解释模拟对象所代表的外部数据角色。

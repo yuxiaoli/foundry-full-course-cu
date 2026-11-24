@@ -53,9 +53,7 @@ Layer 0 的用法取决于语境。读到它时先找到句子里的对象和动
 
 ## 来源
 
-- 参考书 Glossary · Polkadot（p. 52，L1369–1389）列出 Polkadot 的多链背景。三种 Layer 0 语境依据以下官方资料补充。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md)
+- 参考书 Glossary · Polkadot（p. 52，L1369–1389）列出 Polkadot 的多链背景。三种 Layer 0 语境依据以下官方资料补充。《Web3 Fundamentals》
 - High-Level Comparison 与 Architectural Differences 的中继链、平行链和共享安全，以及区块核验流程。[Polkadot Wiki · Polkadot vs. Ethereum](https://developers.polkadot.com/wiki/learn/learn-comparison-ethereum/) · [Polkadot · Inclusion Pipeline](https://developers.polkadot.com/reference/parachains/consensus/inclusion-pipeline/)
 - Overview 和 Key Benefits 中的传播职责。[bloXroute · Blockchain Distribution Network Overview](https://docs.bloxroute.com/core-solutions/blockchain-distribution-network-bdn/overview)
 - Protocol Contracts 与 MessageLib 介绍端点、验证和执行。[LayerZero V2 · Protocol Contracts](https://github.com/LayerZero-Labs/LayerZero-v2/blob/9c741e7f9790639537b1710a203bcdfd73b0b9ac/README.md) · [EndpointV2.sol · send、verify、lzReceive](https://github.com/LayerZero-Labs/LayerZero-v2/blob/9c741e7f9790639537b1710a203bcdfd73b0b9ac/packages/layerzero-v2/evm/protocol/contracts/EndpointV2.sol)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-07)

@@ -4,6 +4,8 @@ Bob 的钱包有 ETH，也显示 100 个最小单位的教学代币。他想允�
 
 理解这次转账需要读两张表。原生币余额属于网络账户状态，代币余额和授权存放在代币合约中。合约调用的 Gas 则仍由该笔交易的付费方以原生币承担。可以先回看[第 03 章的账户状态与费用](../01-ethereum-l1/03-state-execution-and-gas.md)。
 
+如果刚开始分辨 ETH、包装资产和稳定币，先读[第 14A 章](./14a-coins-tokens-and-stablecoins.md)。本章专注 ERC-20 如何记录可替代单位，以及所有人怎样授权其他地址代为支出。
+
 ## 同一地址的两份余额
 
 在以太坊上，ETH 是原生币（native coin）。节点维护账户的 ETH 余额。ERC-20 代币（ERC-20 token）由合约记录，钱包要向指定合约调用 `balanceOf(owner)` 才能得到代币数量。一个地址可以同时出现在许多代币的余额表里，判断资产时应一起核对网络和合约地址。
@@ -34,7 +36,7 @@ Bob 的钱包有 ETH，也显示 100 个最小单位的教学代币。他想允�
 
 课程项目快照使用两个 Solidity 版本，`ManualToken.sol` 是 `0.8.19`，`OurToken.sol` 是 `0.8.24`。手写版适合看状态变化，库版通过 OpenZeppelin 的 `ERC20` 提供同类接口。构造铸造与合约向谁开放铸造是两个问题。测试 `testInitialSupply` 核对供应量，`testUsersCantMint` 通过声明了 `mint` 的测试接口发起调用并预期回退，`OurToken` 项目合约没有公开 `mint` 入口。[OurToken 源码与测试](https://github.com/Cyfrin/foundry-erc20-cu/blob/4dd1a8ec845e207a180000a3b5f6c8ddc4aa91fe/test/OurTokenTest.t.sol#L24-L65)
 
-`testAllowances` 在 Bob 授权 1,000 个最小单位后，由 Alice 代转 500，最后断言两人的余额。若要同时覆盖额度表，可以在原测试的两条余额断言之后设计下面这条额外断言。课程的 3 项原有测试用 Foundry `v1.3.1` 实跑通过。下方额度断言是基于源码设计的附加练习。测试安排可回看[第 12 章的测试布置](../03-contracts-and-foundry/12-testing-external-dependencies.md)。
+`testAllowances` 在 Bob 授权 1,000 个最小单位后，由 Alice 代转 500，最后断言两人的余额。若要同时覆盖额度表，可以在原测试的两条余额断言之后设计下面这条额外断言。下方额度断言是基于源码设计的附加练习。测试安排可回看[第 12 章的测试布置](../03-contracts-and-foundry/12-testing-external-dependencies.md)。
 
 ```solidity
 assertEq(ourToken.allowance(bob, alice), initialAllowance - transferAmount);
@@ -62,9 +64,7 @@ assertEq(ourToken.allowance(bob, alice), initialAllowance - transferAmount);
 
 ## 来源
 
-- 《Web3 Fundamentals》Crypto Coin vs. Token（第 32–33 页，L804–834）。[参考书 Markdown](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》Crypto Coin vs. Token（第 32–33 页，L804–834）。
 - ERC-20 的接口、可选元数据和事件。[ERC-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20#specification)
 - 课程 Advanced Foundry §1 的 ERC/EIP、手写 ERC-20 和 OpenZeppelin 版。[课程索引 L1840–1885](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L1840-L1885)
 - 课程项目的余额与额度、构造铸造和实际测试。[ManualToken.sol](https://github.com/Cyfrin/foundry-erc20-cu/blob/4dd1a8ec845e207a180000a3b5f6c8ddc4aa91fe/src/ManualToken.sol#L13-L130) · [OurToken.sol](https://github.com/Cyfrin/foundry-erc20-cu/blob/4dd1a8ec845e207a180000a3b5f6c8ddc4aa91fe/src/OurToken.sol#L1-L11) · [OurTokenTest.t.sol](https://github.com/Cyfrin/foundry-erc20-cu/blob/4dd1a8ec845e207a180000a3b5f6c8ddc4aa91fe/test/OurTokenTest.t.sol#L24-L65)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-15)

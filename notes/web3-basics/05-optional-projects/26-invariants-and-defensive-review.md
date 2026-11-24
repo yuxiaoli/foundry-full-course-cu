@@ -54,7 +54,7 @@ assert(wethValue + wbtcValue >= totalSupply);
 
 课程审阅材料将范围、发现、修复和复核分成阶段。这里审阅记录可同时用于确认一条已有防护和指定未来变更的回归条件，测试证据能归到一个明确提交。 [智能合约审阅流程课文](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/advanced-foundry/9-security/4-what-is-smart-contract-audit/%2Bpage.md#L50-L131)
 
-固定 DSC 项目的引擎和预言机库使用 Solidity `0.8.19`。按项目提交准备对应的 Git 子模块，然后在独立课程目录使用普通 Foundry。以下命令定位两套不变量检查和本地预言机回归用例。本书用 Foundry `v1.3.1` 和 Solidity `0.8.19` 实跑固定项目的 52 项课程测试，两套不变量与预言机回归都在其中。
+固定 DSC 项目的引擎和预言机库使用 Solidity `0.8.19`。按项目提交准备对应的 Git 子模块，然后在独立课程目录使用普通 Foundry。以下命令定位两套不变量检查和本地预言机回归用例。课程工具链示例为 Foundry `v1.3.1` 与 Solidity `0.8.19`。
 
 ```bash
 forge test --match-contract '^(ContinueOnRevertInvariants|StopOnRevertInvariants)$'
@@ -78,8 +78,6 @@ forge test --match-contract '^OracleLibTest$' --match-test 'testPriceRevertsOnSt
 
 ## 来源
 
-- 《Web3 Fundamentals》，Oracles（第 42–43 页，Markdown L1079–1099），作为外部数据进入合约的背景。 [本地书稿](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》，Oracles（第 42–43 页），作为外部数据进入合约的背景。
 - 课程 fork 的不变量、处理器和测试内容。 [Advanced Foundry §3 索引 L2159–2202](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L2159-L2202) · [固定 DSC 项目](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/tree/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a)
 - 课程的处理器、价格库、模糊测试和预言机回归证据。 [ContinueOnRevertHandler.t.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol) · [StopOnRevertHandler.t.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/fuzz/failOnRevert/StopOnRevertHandler.t.sol) · [OracleLibTest.t.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/unit/OracleLibTest.t.sol)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-26)

@@ -6,9 +6,12 @@
 
 ## 兑换池里发生了什么
 
+**中心化交易所（CEX）**通常代用户保管余额，用自己的系统撮合订单；用户提走资产才在相应账本上产生提现交易。**去中心化交易所（DEX）**则让用户和链上合约按协议成交。自动做市商（AMM）是 DEX 的一种机制，成交价受池子储备和公式影响；并非所有 DEX 都使用同一种池。实际成交时分清托管、执行路径与报价来源。可对照 [Uniswap 官方机制说明](https://developers.uniswap.org/docs/get-started/concepts/how-uniswap-works)。
+
+
 去中心化交易所（decentralized exchange，DEX）用链上规则完成资产交换。本章观察其中一种做法，自动做市商（automated market maker，AMM）根据池的储备和约束计算可以成交的数量。流动性提供者（liquidity provider，LP）先把资产转入池合约。池里的持有量叫储备（reserve）。此后交易者可向池交一种资产并取走另一种，按池规则计算成交量。
 
-流动性提供者在池里持有份额。以常见的两资产池为例，份额记录对池中资产的赎回权。兑换手续费如何归集取决于协议规则和配置，部分设计让费用留在池内，使份额对应的资产随交易变化。[《Web3 Fundamentals》Liquidity Pool](../../../refs/B3_Web3_Fundamentals.md) · [Uniswap v2 Pricing](https://developers.uniswap.org/docs/protocols/v2/concepts/pricing)
+流动性提供者在池里持有份额。以常见的两资产池为例，份额记录对池中资产的赎回权。兑换手续费如何归集取决于协议规则和配置，部分设计让费用留在池内，使份额对应的资产随交易变化。《Web3 Fundamentals》Liquidity Pool · [Uniswap v2 Pricing](https://developers.uniswap.org/docs/protocols/v2/concepts/pricing)
 
 ### 用 25 个 A 换出 20 个 B
 
@@ -26,7 +29,7 @@
 
 ![左侧是兑换池从一百 A 一百 B 变为一百二十五 A 八十 B，右侧是存入资产取得质押凭证](../figures/17.svg)
 
-*图 17　兑换以储备变化交付 B，流动性质押以凭证记录参与关系。储备数字为纸面推演，质押角色依 Lido 历史案例整理。 [Uniswap v2 Pricing](https://developers.uniswap.org/docs/protocols/v2/concepts/pricing) · [分析指南，Lido 案例，L346–368](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)*
+*图 17　兑换以储备变化交付 B，流动性质押以凭证记录参与关系。储备数字为纸面推演，质押角色依 Lido 历史案例整理。 [Uniswap v2 Pricing](https://developers.uniswap.org/docs/protocols/v2/concepts/pricing) · 分析指南，Lido 案例*
 
 ### 报价、执行与费用
 
@@ -36,9 +39,9 @@ Updraft 的 Uniswap 文字课展示了一次 Sepolia 兑换。可以把其复核
 
 ## 质押与流动性质押凭证
 
-在权益证明（proof of stake，PoS）中，原生质押（staking）把一定的资产用于参与验证，以协议规则约束验证者，并按其职责和表现计奖惩。[《Web3 Fundamentals》Staking](../../../refs/B3_Web3_Fundamentals.md)（第 31 页，L784–796）
+在权益证明（proof of stake，PoS）中，原生质押（staking）把一定的资产用于参与验证，以协议规则约束验证者，并按其职责和表现计奖惩。《Web3 Fundamentals》Staking（第 31 页，L784–796）
 
-流动性质押（liquid staking）服务让用户通过一个协议参与这种质押，并取得代表相关权益的代币化凭证。分析指南的 Lido 历史案例有三类动作。用户将原生资产交给协议并得到质押凭证，协议通过节点运营者参与验证，验证奖励按当时的规则在质押者和相关服务参与方之间分配。持有人可以按适用规则处置凭证。治理代币 LDO 用于相关决策，报告把它和用户拿到的质押凭证分别讨论。[分析指南，Lido 历史案例，L346–368](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)
+流动性质押（liquid staking）服务让用户通过一个协议参与这种质押，并取得代表相关权益的代币化凭证。分析指南的 Lido 历史案例有三类动作。用户将原生资产交给协议并得到质押凭证，协议通过节点运营者参与验证，验证奖励按当时的规则在质押者和相关服务参与方之间分配。持有人可以按适用规则处置凭证。治理代币 LDO 用于相关决策，报告把它和用户拿到的质押凭证分别讨论。分析指南，Lido 历史案例
 
 | 场景 | 用户交付的资产 | 收到的东西 | 相关收入来源 |
 | --- | --- | --- | --- |
@@ -65,9 +68,7 @@ Updraft 的 Uniswap 文字课展示了一次 Sepolia 兑换。可以把其复核
 
 ## 来源
 
-- 《Web3 Fundamentals》Staking（第 31 页，L784–796）、Decentralized Finance 与 Liquidity Pool（第 40–42 页，L1017–1078）。[参考书 Markdown](../../../refs/B3_Web3_Fundamentals.md)
-- 《A Guide to Fundamental Analysis in Crypto》Uniswap、Lido（目录第 18、20 页，L328–368，2023 年 2 月报告）。[分析指南 Markdown](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)
+- 《Web3 Fundamentals》Staking（第 31 页，L784–796）、Decentralized Finance 与 Liquidity Pool（第 40–42 页，L1017–1078）。
+- 《A Guide to Fundamental Analysis in Crypto》Uniswap、Lido（目录第 18、20 页，L328–368，2023 年 2 月报告）。
 - 课程 Sepolia 兑换、报价复核和交易观察。[Updraft · How to Swap Tokens on the Uniswap DEX](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/5-blockchain-use-cases/6-uniswap-demo/%2Bpage.md#L1-L78)
 - 课外补充采用 Uniswap v2 的指定版本文档。无手续费的数字是简化推演，真实约束考虑费用。[Uniswap v2 Pricing](https://developers.uniswap.org/docs/protocols/v2/concepts/pricing)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-17)

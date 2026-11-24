@@ -75,9 +75,7 @@ Alice 在课程的稳定币合约里存入价值 300 美元的抵押品，铸出
 
 ## 来源
 
-- 《Web3 Fundamentals》Decentralized Finance / Stablecoins（第 40 页，L1017–1035），稳定币的用途背景。[参考书 Markdown](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》Decentralized Finance / Stablecoins（第 40 页，L1017–1035），稳定币的用途背景。
 - 课程抵押、债务与清算。[DSCEngine.sol，入口](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/src/DSCEngine.sol#L64-L310) · [DSCEngine.sol，金额和阈值](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/src/DSCEngine.sol#L323-L425)
 - 铸造边界、健康因子与清算断言。[DSCEngineTest.t.sol，铸造](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/unit/DSCEngineTest.t.sol#L232-L263) · [DSCEngineTest.t.sol，清算](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/unit/DSCEngineTest.t.sol#L387-L458)
 - 报价检查、夹具和 mock 返回值。[OracleLib.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/src/libraries/OracleLib.sol#L18-L34) · [OracleLibTest.t.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/unit/OracleLibTest.t.sol#L21-L45) · [MockV3Aggregator.sol](https://github.com/Cyfrin/foundry-defi-stablecoin-cu/blob/f04bb04a77e4aa4390e6df38b0dc0c214c5a7c6a/test/mocks/MockV3Aggregator.sol#L38-L70)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-18)

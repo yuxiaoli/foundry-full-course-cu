@@ -49,7 +49,7 @@ ABI（应用二进制接口，Application Binary Interface）规定函数名称�
 
 按[第 12 章的测试分层](../03-contracts-and-foundry/12-testing-external-dependencies.md)看，这些断言覆盖初版行为、切换实现与升级后的写读。初始化一次性、拒绝未授权升级、原有非零值保留及布局兼容各自需要相应的验收证据。课程的最后一个测试写入发生在升级之后。 [`DeployAndUpgradeTest.t.sol` L17–51](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/test/DeployAndUpgradeTest.t.sol#L17-L51)
 
-在升级项目提交 `c964481bf1ab` 的目录，按 Git 子模块版本准备依赖，使用普通 Foundry。该提交的 OpenZeppelin Contracts 和 Contracts Upgradeable 均为 `4.8.3`，提供 `upgradeTo` 和无参 `__Ownable_init()`。本书用 Foundry `v1.3.1` 与 Solidity `0.8.24` 运行以下命令，3 项通过。 [项目编译与导入配置](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/foundry.toml) · [依赖清单](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/.gitmodules)
+在升级项目提交 `c964481bf1ab` 的目录，按 Git 子模块版本准备依赖，使用普通 Foundry。该提交的 OpenZeppelin Contracts 和 Contracts Upgradeable 均为 `4.8.3`，提供 `upgradeTo` 和无参 `__Ownable_init()`。以下示例可使用 Foundry `v1.3.1` 与 Solidity `0.8.24`。 [项目编译与导入配置](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/foundry.toml) · [依赖清单](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/.gitmodules)
 
 ```bash
 forge test --match-contract '^DeployAndUpgradeTest$'
@@ -72,8 +72,6 @@ forge test --match-contract '^DeployAndUpgradeTest$'
 
 ## 来源
 
-- 《Web3 Fundamentals》，Smart Contracts（第 38–39 页，Markdown L962–1007），作为发布字节码与可重复调用的背景。 [本地书稿](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》，Smart Contracts（第 38–39 页），作为发布字节码与可重复调用的背景。
 - 课程 fork 的 Advanced Foundry §6，关于委托执行、小代理及 UUPS。 [固定课程索引 L2475–2539](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L2475-L2539)
 - 课程的三个示例项目，分别支撑存储、ABI 编码、升级行为。 [存储声明与访问](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/src/exampleContracts/FunWithStorage.sol) · [调用编码](https://github.com/Cyfrin/foundry-nft-cu/blob/a3e8d17cc951dbd5c7261eae440354b89e9c6203/src/sublesson/CallAnything.sol) · [代理升级测试](https://github.com/Cyfrin/foundry-upgrades-cu/blob/c964481bf1ab3980632ec58c394cba2977592065/test/DeployAndUpgradeTest.t.sol)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-23)

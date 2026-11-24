@@ -4,6 +4,8 @@
 
 这笔交易叫**转账 A**。它来自一份虚构的以太坊式本地测试账本（链 ID 为 `31337`）。地址和交易哈希都是占位值，读者直接用下面的记录练习即可。
 
+比特币用未花费交易输出表示可花费的价值，以太坊的这个例子则更新**账户**的余额和序号。如果想弄清为什么签名正确还不足以决定哪笔付款算数，先读[第 00 章的双花与 UTXO](./00-bitcoin-and-double-spending.md)。
+
 ## 先读一条浏览器记录
 
 **区块浏览器（block explorer）**把节点提供的链上数据整理成可读页面。使用浏览器核对一笔付款时，先认准网络，再用交易哈希找到那一笔请求。转账 A 的静态字段如下。
@@ -49,6 +51,4 @@
 
 - 课程测试网练习的发送及区块浏览器验证两步。沿用其观察顺序，正文页面和字段值采用转账 A 的虚构数据。[Updraft · Sending First Transaction on a Testnet，L1–52](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/3-sending-transactions/7-sending-first-transaction-on-a-testnet/%2Bpage.md#L1-L52)
 - 课程的交易广播、收录与确认过程。[Updraft · The Lifecycle of a Transaction，L1–79](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/12-the-lifecycle-of-a-transaction/%2Bpage.md#L1-L79)
-- 转账情境参考 Public & Private Keys（p. 25，L630–646）的付款示意。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-01)
+- 转账情境参考 Public & Private Keys（p. 25，L630–646）的付款示意。《Web3 Fundamentals》

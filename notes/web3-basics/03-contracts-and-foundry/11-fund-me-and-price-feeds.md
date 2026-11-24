@@ -66,6 +66,4 @@ Remix 版的 `receive()` 与 `fallback()` 调用 `fund()`，所以某些直接�
 
 - 课程 fork [README.md · Solidity 101 §3，L854–1023](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L854-L1023)，及 Remix [FundMe.sol](https://github.com/Cyfrin/remix-fund-me-cu/blob/35d7b13ee0c495c32fbe1295d497294d1b9f9744/FundMe.sol#L1-L79)、[PriceConverter.sol](https://github.com/Cyfrin/remix-fund-me-cu/blob/35d7b13ee0c495c32fbe1295d497294d1b9f9744/PriceConverter.sol#L10-L30)。
 - Foundry 版 [FundMe.sol · 状态、构造、付款和提款](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/src/FundMe.sol#L23-L87)、[PriceConverter.sol](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/src/PriceConverter.sol#L2-L22) 与 [HelperConfig.s.sol · 本地精度和初始报价](https://github.com/Cyfrin/foundry-fund-me-cu/blob/d2834ea3b78a67dd4db6790e66c6c63971feebc5/script/HelperConfig.s.sol#L7-L16)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，The Economy · Oracles（pp. 42–43，L1079–1099），用于外部数据进入链上应用的背景。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-11)
+- 《Web3 Fundamentals》，The Economy · Oracles（pp. 42–43，L1079–1099），用于外部数据进入链上应用的背景。

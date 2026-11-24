@@ -1,13 +1,15 @@
 # Web3 入门书
 
-小林发送 0.01 枚测试 ETH，收款人什么时候能在账本上看到它？全书从这笔交易出发，逐步走到写合约、读协议和执行链上治理。第 01–21 章按顺序阅读，第 22–26 章可按兴趣选读。第 01 章从会读金额开始，第 08 章从变量与函数开始。需要动手时，章节会给出固定版本和相应的测试环境。
+当两个人同时收到同一笔数字货币，谁真正收到了钱？从比特币为什么需要共享账本学起，再用一笔测试 ETH 转账串起钱包、签名、哈希、区块、Gas 与共识。接着认识扩容与跨链，动手写合约，最后读懂代币、去中心化金融与链上治理。前四部分按顺序读；工程选读可按兴趣跳读。
 
 ## 从一笔交易到共享账本
 
-沿同一笔本地测试转账认识钱包、状态、费用、节点和共识。
+先弄懂比特币的双花与 UTXO，再用以太坊测试转账认识钱包、哈希、状态、费用、节点和共识。
 
+- [00 · 比特币、双花与共享记账](./01-ethereum-l1/00-bitcoin-and-double-spending.md)
 - [01 · 一笔转账怎样被写进区块](./01-ethereum-l1/01-trace-a-transfer.md)
 - [02 · 钱包、私钥与交易签名](./01-ethereum-l1/02-wallets-keys-signatures.md)
+- [02A · 哈希、区块承诺与 Merkle 证明](./01-ethereum-l1/02a-hashes-and-merkle-proofs.md)
 - [03 · 链上状态、执行与 Gas](./01-ethereum-l1/03-state-execution-and-gas.md)
 - [04 · 节点、区块与共识](./01-ethereum-l1/04-blocks-and-consensus.md)
 
@@ -33,8 +35,9 @@
 
 ## 从链上资产到协议和 DAO
 
-读懂余额、授权和协议资金流，再从票权与提案走到时间锁执行。
+先分清原生币、代币与稳定币，再看授权、流动性、协议资金流与治理。
 
+- [14A · 原生币、合约代币与稳定币](./04-assets-protocols-and-governance/14a-coins-tokens-and-stablecoins.md)
 - [15 · ERC-20 代币、余额与授权](./04-assets-protocols-and-governance/15-erc20-token-accounting.md)
 - [16 · ERC-721、NFT 所有权与元数据](./04-assets-protocols-and-governance/16-nft-ownership-and-metadata.md)
 - [17 · 从一次兑换读懂流动性池与质押凭证](./04-assets-protocols-and-governance/17-swaps-pools-and-staking.md)
@@ -52,10 +55,3 @@
 - [24 · 跨链实践：CCIP 与 Rebase 代币](./05-optional-projects/24-ccip-rebase-project.md)
 - [25 · 账户抽象：Ethereum 与 ZKsync 两种路径](./05-optional-projects/25-account-abstraction.md)
 - [26 · 不变量测试与防御性审阅](./05-optional-projects/26-invariants-and-defensive-review.md)
-
-## 资料与核查
-
-- [配图索引与出处](./figures/README.md)
-- [验收记录与复现范围](./VALIDATION.md)
-- [写作进度](./PROGRESS.md)
-- [原规划](../../planning/beginner/outline.md) · [逐章来源映射](../../planning/beginner/source-map.md)

@@ -46,7 +46,7 @@
 | `testPerformUpkeepUpdatesRaffleStateAndEmitsRequestId` | 发出请求之后状态是否为 `CALCULATING`，编号从哪条日志提取 |
 | `testFulfillRandomWordsPicksAWinnerResetsAndSendsMoney` | 模拟回调后胜者、余额、状态、参与人数与时间是否满足断言 |
 
-本地实跑使用 Foundry `v1.3.1`、Solidity `0.8.19`、课程固定 `chainlink-brownie-contracts` Git 子模块，以及 `foundry-devops` 的明确重映射。指定测试路径共 14 项通过。以下命令在独立副本运行。长路径的 Windows 工作目录可改为较短路径。
+运行课程示例可使用 Foundry `v1.3.1`、Solidity `0.8.19`、课程固定 `chainlink-brownie-contracts` Git 子模块，以及 `foundry-devops` 的明确重映射。以下命令在独立副本运行。长路径的 Windows 工作目录可改为较短路径。
 
 ```bash
 git clone https://github.com/Cyfrin/foundry-smart-contract-lottery-cu
@@ -75,6 +75,4 @@ forge test --remappings 'foundry-devops/=lib/foundry-devops/' --match-path test/
 
 - 固定项目 [Raffle.sol，L24–184](https://github.com/Cyfrin/foundry-smart-contract-lottery-cu/blob/742fc90fcadc2b89559b97607115793547fba831/src/Raffle.sol#L24-L184)、[RaffleTest.t.sol，L60–273](https://github.com/Cyfrin/foundry-smart-contract-lottery-cu/blob/742fc90fcadc2b89559b97607115793547fba831/test/unit/RaffleTest.t.sol#L60-L273)、[foundry.toml](https://github.com/Cyfrin/foundry-smart-contract-lottery-cu/blob/742fc90fcadc2b89559b97607115793547fba831/foundry.toml#L1-L14) 与 [.gitmodules](https://github.com/Cyfrin/foundry-smart-contract-lottery-cu/blob/742fc90fcadc2b89559b97607115793547fba831/.gitmodules#L1-L12)。
 - [Updraft · Implement the Chainlink VRF，L9–37](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/foundry/4-smart-contract-lottery/9-implement-the-chainlink-vrf/%2Bpage.md#L9-L37)、[Implementing Chainlink Automation](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/foundry/4-smart-contract-lottery/19-implementing-chainlink-automation/%2Bpage.md#L8-L150)、[Chainlink VRF V2.5 · Subscription](https://docs.chain.link/vrf/v2-5/overview/subscription)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，Oracles（pp. 42–43，L1079–1099），用于将外部结果接入链上应用的概念背景。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-14)
+- 《Web3 Fundamentals》，Oracles（pp. 42–43，L1079–1099），用于将外部结果接入链上应用的概念背景。

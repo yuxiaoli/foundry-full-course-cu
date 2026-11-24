@@ -29,7 +29,7 @@ forge script script/DeployFundMe.s.sol:DeployFundMe \
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-浏览器打开 `http://127.0.0.1:8000/`。若想单独核对回执，可从钱包活动里复制哈希，在配置了同一 `RPC` 的终端执行 `cast receipt "$TX_HASH" --rpc-url "$RPC"`，其中 `TX_HASH` 使用复制到的值。写作验收用 Anvil、Forge 和 Cast 实跑了部署、余额查询、`fund()` 和回执查询，见到状态成功以及 `0 → 0.003 ETH`。按钮路径对照网页源码。
+浏览器打开 `http://127.0.0.1:8000/`。若想单独核对回执，可从钱包活动里复制哈希，在配置了同一 `RPC` 的终端执行 `cast receipt "$TX_HASH" --rpc-url "$RPC"`，其中 `TX_HASH` 使用复制到的值。按钮路径对照网页源码。
 
 ![网页用 Provider 查询 Fund Me 余额，充值经签名和回执后再次读取](../figures/13.svg)
 
@@ -76,6 +76,4 @@ python -m http.server 8000 --bind 127.0.0.1
 
 - [html-fund-me-cu · index.html](https://github.com/Cyfrin/html-fund-me-cu/blob/740cd435e52fefacbab4f9dc5c6f4cf3c5e9f414/index.html#L1-L19)、[index.js · 钱包与按钮](https://github.com/Cyfrin/html-fund-me-cu/blob/740cd435e52fefacbab4f9dc5c6f4cf3c5e9f414/index.js#L1-L26)、[index.js · fund 与 getBalance](https://github.com/Cyfrin/html-fund-me-cu/blob/740cd435e52fefacbab4f9dc5c6f4cf3c5e9f414/index.js#L48-L81)、[constants.js · 地址与 ABI](https://github.com/Cyfrin/html-fund-me-cu/blob/740cd435e52fefacbab4f9dc5c6f4cf3c5e9f414/constants.js#L1-L45)。
 - [Updraft · How MetaMask works with the Browser，L9–194](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/foundry/3-html-fund-me/4-metamask/%2Bpage.md#L9-L194) 和 [ethers v6 · Providers](https://docs.ethers.org/v6/api/providers/)。
-- [refs/B3_Web3_Fundamentals.md](../../../refs/B3_Web3_Fundamentals.md)，Crypto Wallet、Public & Private Keys（pp. 24–25，L606–646）。钱包与签名接口按实际课程代码理解，原书的托管和密钥类比用于背景。
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-13)
+- 《Web3 Fundamentals》，Crypto Wallet、Public & Private Keys（pp. 24–25，L606–646）。钱包与签名接口按实际课程代码理解，原书的托管和密钥类比用于背景。

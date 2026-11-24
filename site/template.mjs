@@ -1,5 +1,3 @@
-const repository = "https://github.com/yuxiaoli/foundry-full-course-cu";
-
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (character) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -61,9 +59,9 @@ export function renderPage({ base, page, groups, toc, content, previous, next, c
   const first = groups[0]?.chapters[0];
   const title = isHome ? heading : `${heading}｜Web3 入门书`;
   const description = isHome
-    ? "从第一笔测试交易开始读懂以太坊，动手写合约、测应用，再理解链上资产与治理。"
-    : isChapter ? heading + "，简体中文 Web3 入门书。" : heading + "，Web3 入门书的参考资料。";
-  const nav = chapterNav(base, page, groups);
+    ? "从比特币与共享账本学起，读懂以太坊交易、智能合约、链上资产与治理。"
+    : heading + "，简体中文 Web3 入门书。";
+  const nav = isHome ? "" : chapterNav(base, page, groups);
   const sectionLinks = tocList(toc);
   return `<!doctype html>
 <html lang="zh-CN" data-base="${escapeHtml(base)}">
@@ -89,34 +87,33 @@ export function renderPage({ base, page, groups, toc, content, previous, next, c
     <div class="topbar-inner">
       <a class="brand" href="${escapeHtml(base)}"><span class="brand-icon">${icon("brand")}</span><span class="brand-text">Web3 入门书</span></a>
       <div class="top-actions">
-        <button type="button" class="nav-toggle" data-nav-open aria-controls="mobile-nav" aria-haspopup="dialog">${icon("menu")} <span>目录</span></button>
+        ${!isHome ? `<button type="button" class="nav-toggle" data-nav-open aria-controls="mobile-nav" aria-haspopup="dialog">${icon("menu")} <span>目录</span></button>` : ""}
         <button type="button" class="search-toggle" data-search-open aria-controls="search-dialog" aria-haspopup="dialog">${icon("search")} <span>搜索</span></button>
-        <a class="repo-link" href="${repository}/tree/develop">GitHub ${icon("external")}</a>
       </div>
     </div>
   </header>
   <div class="site-shell">
-    <aside class="site-sidebar" id="site-sidebar">${nav}</aside>
+    ${!isHome ? `<aside class="site-sidebar" id="site-sidebar">${nav}</aside>` : ""}
     <main class="main-content" id="main-content" tabindex="-1">
       ${isHome ? `<header class="home-hero">
         <h1>${escapeHtml(heading)}</h1>
         <div class="hero-actions">${first ? `<a href="${escapeHtml(first.url)}">从第一章开始 ${icon("right")}</a>` : ""}</div>
       </header>` : `<header class="page-header">
-        <div class="breadcrumb"><a href="${escapeHtml(base)}">全书目录</a>${page.section ? ` <span aria-hidden="true">/</span> <span>${escapeHtml(page.section)}</span>` : ""}</div>
+        <div class="breadcrumb"><span>${escapeHtml(page.section)}</span></div>
         <h1>${escapeHtml(heading)}</h1>
         ${isChapter ? `<button type="button" class="copy-link" data-copy-link>${icon("link")} <span data-copy-label>复制链接</span></button>` : ""}
       </header>`}
       ${toc.length ? `<details class="inline-toc"><summary>本页目录</summary><nav aria-label="本页目录">${sectionLinks}</nav></details>` : ""}
       <article class="article-body">${content}</article>
       ${chapterPager(previous, next)}
-      <footer class="site-footer"><a href="${escapeHtml(base)}">全书目录</a><span aria-hidden="true">·</span><a href="${escapeHtml(base)}figures/">配图出处</a><span aria-hidden="true">·</span><a href="${escapeHtml(base)}validation/">验收记录</a></footer>
+      <footer class="site-footer"><span>Written by <a href="https://s.vectorindex.cloud/sean">Sean</a> with ❤️</span></footer>
     </main>
     ${toc.length ? `<aside class="page-toc"><nav class="toc-inner" aria-label="本页目录"><h2 class="toc-title">本页目录</h2>${sectionLinks}</nav></aside>` : ""}
   </div>
-  <dialog id="mobile-nav" class="mobile-nav" aria-labelledby="mobile-nav-title">
+  ${!isHome ? `<dialog id="mobile-nav" class="mobile-nav" aria-labelledby="mobile-nav-title">
     <div class="mobile-nav-header"><h2 id="mobile-nav-title">阅读目录</h2><button type="button" class="dialog-close" data-nav-close aria-label="关闭目录">${icon("close")}</button></div>
     ${nav}
-  </dialog>
+  </dialog>` : ""}
   <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title">
     <div class="search-header"><h2 id="search-title">全文搜索</h2><button type="button" class="dialog-close" data-search-close aria-label="关闭搜索">${icon("close")}</button></div>
     <label for="search-input">关键词</label>

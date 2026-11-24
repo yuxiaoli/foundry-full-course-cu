@@ -1226,3 +1226,15 @@ button, summary {
     justify-content: flex-start;
   }
 }
+
+/* The homepage itself is the book index; chapter pages keep their sidebar. */
+.page-home .site-shell {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 67rem;
+}
+
+.page-home .main-content {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 64rem;
+}

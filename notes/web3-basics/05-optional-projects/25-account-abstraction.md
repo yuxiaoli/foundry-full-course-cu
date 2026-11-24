@@ -35,7 +35,7 @@ EraVM 将类型化交易用于原生账户抽象。Type 113（十六进制 `0x71
 
 ## 哪些环节有本地测试证据
 
-两套合约和测试用 Solidity `0.8.24`。下面的「结果」是课程固定提交的断言或预期回退。本书用普通 Foundry `v1.3.1` 实跑 Ethereum 的 `MinimalAccountTest`，5 项通过。Era 的账户入口和断言按固定源码走读，需用下述课程工具链另做复跑。可参考[第 12 章的读测试方法](../03-contracts-and-foundry/12-testing-external-dependencies.md)核对覆盖范围。
+两套合约和测试用 Solidity `0.8.24`。下面的「结果」是课程固定提交的断言或预期回退。Ethereum 的 `MinimalAccountTest` 使用标准 Foundry；Era 的用例使用下述支持 ZKsync 的工具链。可参考[第 12 章的读测试方法](../03-contracts-and-foundry/12-testing-external-dependencies.md)核对覆盖范围。
 
 | 测试 | 结果及范围 |
 | --- | --- |
@@ -72,8 +72,6 @@ forge test --zksync --system-mode=true --match-contract '^ZkMinimalAccountTest$'
 
 ## 来源
 
-- 《Web3 Fundamentals》，Public & Private Keys（第 25 页，Markdown L630–646），用于授权和密钥的背景。摘要与账户流程按本章项目及规范核对。 [本地书稿](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》，Public & Private Keys（第 25 页），用于授权和密钥的背景。摘要与账户流程按本章项目及规范核对。
 - 课程项目 `minimal-account-abstraction` 的说明、固定实现和测试。 [README L42–68](https://github.com/Cyfrin/minimal-account-abstraction/blob/a0b1103867d24b7f2177028fe410c238517cb64e/README.md#L42-L68) · [Ethereum 测试 L38–133](https://github.com/Cyfrin/minimal-account-abstraction/blob/a0b1103867d24b7f2177028fe410c238517cb64e/test/ethereum/MinimalAccountTest.t.sol#L38-L133) · [Era 测试 L35–121](https://github.com/Cyfrin/minimal-account-abstraction/blob/a0b1103867d24b7f2177028fe410c238517cb64e/test/zksync/ZkMinimalAccountTest.t.sol#L35-L121) · [子模块](https://github.com/Cyfrin/minimal-account-abstraction/blob/a0b1103867d24b7f2177028fe410c238517cb64e/.gitmodules)
 - 规范与课程版本分别用于角色、摘要和执行证据。 [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) · [固定 EntryPoint 实现](https://github.com/eth-infinitism/account-abstraction/blob/7af70c8993a6f42973f520ae0752386a5032abe7/contracts/core/EntryPoint.sol) · [Era 原生账户抽象设计](https://docs.zksync.io/zksync-protocol/era-vm/account-abstraction/design)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-25)

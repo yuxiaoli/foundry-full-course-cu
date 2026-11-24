@@ -44,7 +44,7 @@ Alice 在 Sepolia 的保险库里存入 `100000` wei，刚拿到 `100000` 个 RB
 forge test --match-contract '^CrossChainTest$' --match-test '^testBridgeAllTokensBack$'
 ```
 
-单独运行 `forge test --match-contract '^RebaseTokenTest$'` 可以在普通 Foundry 上核对计息、权限与赎回，无需分叉 RPC。本书用 Foundry `v1.3.1` 跑了这一组，12 项通过。上述双分叉测试的跨链步骤和断言来自固定源码。
+单独运行 `forge test --match-contract '^RebaseTokenTest$'` 可以在普通 Foundry 上核对计息、权限与赎回，无需分叉 RPC。从双分叉用例的源码可以分别定位两条链上的余额断言。
 
 ## 常见误区
 
@@ -63,8 +63,6 @@ forge test --match-contract '^CrossChainTest$' --match-test '^testBridgeAllToken
 
 ## 来源
 
-- 《Web3 Fundamentals》，Crypto Bridge（第 11–12 页，Markdown L266–308），用于理解两条链的资产表示和信任环节。 [本地书稿](../../../refs/B3_Web3_Fundamentals.md)
+- 《Web3 Fundamentals》，Crypto Bridge（第 11–12 页），用于理解两条链的资产表示和信任环节。
 - 课程 fork Advanced Foundry §4 的 Rebase、Vault、CCIP、代币池和跨链测试。 [固定课程索引 L2240–2378](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L2240-L2378)
 - 固定课程项目源码、角色设置和跨链余额证据。 [RebaseToken](https://github.com/Cyfrin/foundry-cross-chain-rebase-token-cu/blob/a00d9e09e09eec5609924d6f6a231f10aa2bbfb6/src/RebaseToken.sol) · [Vault](https://github.com/Cyfrin/foundry-cross-chain-rebase-token-cu/blob/a00d9e09e09eec5609924d6f6a231f10aa2bbfb6/src/Vault.sol) · [代币池](https://github.com/Cyfrin/foundry-cross-chain-rebase-token-cu/blob/a00d9e09e09eec5609924d6f6a231f10aa2bbfb6/src/RebaseTokenPool.sol) · [两链测试](https://github.com/Cyfrin/foundry-cross-chain-rebase-token-cu/blob/a00d9e09e09eec5609924d6f6a231f10aa2bbfb6/test/CrossChain.t.sol)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-24)

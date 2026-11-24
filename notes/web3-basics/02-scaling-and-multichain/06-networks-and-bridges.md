@@ -69,7 +69,5 @@ A 链显示「已锁定」时，B 链仍可能尚未收到信息。传递消息�
 ## 来源
 
 - 多链以及课内的跨链课程入口。[Updraft · Many, Many Chains，L1–56](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/2-what-is-a-blockchain/6-many-many-chains/%2Bpage.md#L1-L56) · [课程 fork · Advanced Foundry §4，L2240–2328](https://github.com/yuxiaoli/foundry-full-course-cu/blob/b92616c4212d40cacfeeff4ea0f30501cafad094/README.md#L2240-L2328)
-- Crypto Bridge（pp. 11–12，L266–308）提供锁定及发行的例子和桥的信任条件。两条链和数值是本章自拟。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md)
+- Crypto Bridge（pp. 11–12，L266–308）提供锁定及发行的例子和桥的信任条件。两条链和数值是本章自拟。《Web3 Fundamentals》
 - 桥的常见机制、假设和侧链的独立共识。[Ethereum · Bridges](https://ethereum.org/developers/docs/bridges/) · [Ethereum · Sidechains](https://ethereum.org/developers/docs/scaling/sidechains/)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-06)

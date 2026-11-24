@@ -9,6 +9,8 @@ const dist = join(folder, 'dist');
 const index = JSON.parse(await readFile(join(dist, 'search-index.json'), 'utf8'));
 const base = index.pages[0].url;
 const docs = new Map();
+const chapterCount = 29;
+const privateText = /资料与核查|配图索引与出处|验收记录|写作进度|原规划|逐章来源映射|(?:^|[/'"\s])(?:refs\/|planning\/|PROGRESS\.md|VALIDATION\.md|source-map\.md)/u;
 
 function outputPath(url) {
   assert(url.startsWith(base), 'Local URL must stay inside the Pages project: ' + url);
@@ -24,10 +26,20 @@ for (const page of index.pages) {
   docs.set(page.url, document);
   assert.equal(document.documentElement.getAttribute('lang'), 'zh-CN');
   assert.equal(document.querySelectorAll('h1').length, 1, 'One page heading: ' + page.url);
+  assert(!privateText.test(html), 'Internal material leaked into generated HTML: ' + page.url);
+  const footer = document.querySelector('.site-footer');
+  assert.equal(footer.textContent.trim(), 'Written by Sean with ❤️');
+  assert.equal(footer.querySelectorAll('a').length, 1);
+  assert.equal(footer.querySelector('a').getAttribute('href'), 'https://s.vectorindex.cloud/sean');
   const navigation = document.querySelectorAll('.chapter-nav');
-  assert(navigation.length, 'Sidebar missing: ' + page.url);
-  for (const nav of navigation) {
-    assert.equal(nav.querySelectorAll('a.chapter-link').length, 26, 'Sidebar: ' + page.url);
+  if (page.url === base) {
+    assert.equal(navigation.length, 0, 'The homepage itself is the single book index');
+    assert.equal(document.querySelectorAll('article a[href]').length, chapterCount + document.querySelectorAll('article a.heading-anchor').length);
+  } else {
+    assert(navigation.length, 'Sidebar missing: ' + page.url);
+    for (const nav of navigation) {
+      assert.equal(nav.querySelectorAll('a.chapter-link').length, chapterCount, 'Sidebar: ' + page.url);
+    }
   }
   const canon = new URL(document.querySelector('link[rel=canonical]').getAttribute('href'));
   assert.equal(canon.pathname, page.url, 'Canonical: ' + page.url);
@@ -42,15 +54,16 @@ for (const page of index.pages) {
   }
 }
 
-const chapters = [...docs.keys()].filter(url => /\/\d{2}-[^/]+\/\d{2}-[^/]+\/$/.test(url));
-assert.equal(chapters.length, 26);
-assert.equal(docs.size, 29);
+const chapters = [...docs.keys()].filter(url => /\/\d{2}-[^/]+\/\d{2}[a-z]?-[^/]+\/$/.test(url));
+assert.equal(chapters.length, chapterCount);
+assert.equal(docs.size, chapterCount + 1);
+assert(!privateText.test(JSON.stringify(index)), 'Internal material leaked into search');
 let answers = 0;
 let highlightedBlocks = 0;
 let tables = 0;
 for (const [i, url] of chapters.entries()) {
   const page = docs.get(url);
-  const num = String(i + 1).padStart(2, '0');
+  const num = /\/(\d{2}[a-z]?)-[^/]+\/$/.exec(url)[1].toUpperCase();
   const prose = page.querySelector('.article-body').cloneNode(true);
   for (const code of prose.querySelectorAll('code')) code.remove();
   assert(!/\*\*[^*\r\n]{2,160}\*\*/u.test(prose.textContent), 'Unrendered Markdown emphasis: ' + url);
@@ -60,10 +73,13 @@ for (const [i, url] of chapters.entries()) {
   assert.equal(page.querySelector('.pager-prev')?.getAttribute('href'), chapters[i - 1]);
   assert.equal(page.querySelector('.pager-next')?.getAttribute('href'), chapters[i + 1]);
   const figure = page.querySelector('.article-body figure');
-  assert.equal(page.querySelectorAll('.article-body figure').length, 1);
-  assert.equal(figure.querySelector('img').getAttribute('src'), base + 'figures/' + num + '.svg');
-  assert(figure.querySelector('img').getAttribute('alt').trim());
-  assert(figure.querySelector('figcaption').textContent.trim().startsWith('图 ' + num));
+  const hasOriginalFigure = !['00', '02A', '14A'].includes(num);
+  assert.equal(page.querySelectorAll('.article-body figure').length, hasOriginalFigure ? 1 : 0);
+  if (hasOriginalFigure) {
+    assert.equal(figure.querySelector('img').getAttribute('src'), base + 'figures/' + num + '.svg');
+    assert(figure.querySelector('img').getAttribute('alt').trim());
+    assert(figure.querySelector('figcaption').textContent.trim().startsWith('图 ' + num));
+  }
   const details = page.querySelectorAll('.article-body details.answer');
   assert(details.length >= 2, 'Missing exercise list: ' + url);
   for (const answer of details) {
@@ -75,16 +91,36 @@ for (const [i, url] of chapters.entries()) {
   tables += page.querySelectorAll('.table-scroll > table').length;
   highlightedBlocks += page.querySelectorAll('pre > code.hljs > [class^=hljs-]').length;
 }
-assert.equal(answers, 79);
+assert.equal(answers, 88);
 assert(tables > 20 && highlightedBlocks > 0, 'Tables and syntax highlighting must survive the build.');
-const access = docs.get(chapters[3]).getElementById('04-2-chain-access-and-governance');
+const findChapter = slug => chapters.find(url => url.endsWith('/' + slug + '/'));
+const accessUrl = findChapter('04-blocks-and-consensus');
+const access = docs.get(accessUrl).getElementById('04-2-chain-access-and-governance');
 assert(access?.textContent.includes('公链、私有链与联盟链'));
-assert(index.pages.at(4).blocks.some(block => block.id === access.id && block.text.includes('白名单')));
+assert(index.pages.find(page => page.url === accessUrl).blocks.some(block => block.id === access.id && block.text.includes('白名单')));
+const bitcoin = docs.get(findChapter('00-bitcoin-and-double-spending'));
+assert(bitcoin.querySelector('article a[href="https://bitcoin.org/bitcoin.pdf"]'));
+for (const [slug, term] of [['00-bitcoin-and-double-spending', 'UTXO'], ['02a-hashes-and-merkle-proofs', 'Merkle 根'], ['14a-coins-tokens-and-stablecoins', '脱锚']]) {
+  const url = findChapter(slug);
+  assert(docs.get(url).querySelector('article').textContent.includes(term));
+  assert(index.pages.find(page => page.url === url).blocks.some(block => block.text.includes(term)));
+}
+const nftUrl = findChapter('16-nft-ownership-and-metadata');
+const nft = docs.get(nftUrl);
+assert(nft.querySelector('article a[href="https://eips.ethereum.org/EIPS/eip-721"]'));
+assert(nft.querySelector('article a[href="https://eips.ethereum.org/EIPS/eip-1155"]'));
+for (const term of ['ERC-1155', 'tokenURI', '版权', 'TransferBatch']) {
+  assert(nft.querySelector('article').textContent.includes(term));
+  assert(index.pages.find(page => page.url === nftUrl).blocks.some(block => block.text.includes(term)));
+}
+const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
+assert(!privateText.test(sitemap));
+assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => new URL(match[1]).pathname), [...docs.keys()]);
 
 let links = 0;
 const origin = 'https://site.test';
 const available = new Set([
-  '.nojekyll', 'assets/app.js', 'assets/style.css', 'assets/favicon.svg', 'search-index.json',
+  '.nojekyll', 'assets/app.js', 'assets/style.css', 'assets/favicon.svg', 'search-index.json', 'sitemap.xml',
 ]);
 for (const url of docs.keys()) available.add(outputPath(url));
 for (let i = 1; i <= 26; i++) {
@@ -116,4 +152,4 @@ async function listFiles(dir) {
   }))).flat();
 }
 assert.deepEqual((await listFiles(dist)).sort(), [...available].sort(), 'Only allowlisted book pages, figures, and site assets may be published.');
-console.log('Checked 26 chapter routes, 79 answers, 26 original figures, ' + links + ' site links and the output allowlist.');
+console.log('Checked 29 chapter routes, 88 answers, 26 original figures, ' + links + ' site links, sitemap, search and the publication allowlist.');

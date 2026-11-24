@@ -32,6 +32,8 @@
 
 主网（mainnet）和测试网（testnet）是独立网络。测试环境适合用来练习核对签名与提交，转账 A 所用的本地测试链是其中一种教学环境。付款前先比对钱包和浏览器所选的网络，再确认签名窗口所显示的请求字段。网站正文中的付款说明与钱包实际要求授权的内容都值得检查。[钱包接网页的全过程](../03-contracts-and-foundry/13-wallet-to-dapp.md)会演示这一点。
 
+交易哈希是标识，不是钥匙或签名。若要分辨内容指纹、签名授权和区块承诺，接着读[第 02A 章哈希与 Merkle 证明](./02a-hashes-and-merkle-proofs.md)。
+
 ## 常见误区
 
 - **把地址当成公钥或登录凭据。** 地址用于定位账户，签名者使用私钥授权。对于 EOA，地址与公钥存在派生关系，两者的表示及用途各异。
@@ -52,6 +54,4 @@
 ## 来源
 
 - 钱包职责、持钥及支付授权。[Updraft · What Is a Wallet?，L1–51](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/3-sending-transactions/2-what-is-a-wallet/%2Bpage.md#L1-L51) · [Updraft · Introduction to Signatures，L1–81](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/5-introduction-to-signatures/%2Bpage.md#L1-L81)
-- Crypto Wallet 和 Public & Private Keys（pp. 24–25，L606–646）。取付款请求及签章的教学思路，账户和密钥术语采用以太坊文档。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md) · [Ethereum accounts](https://ethereum.org/developers/docs/accounts/) · [JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-02)
+- Crypto Wallet 和 Public & Private Keys（pp. 24–25，L606–646）。取付款请求及签章的教学思路，账户和密钥术语采用以太坊文档。《Web3 Fundamentals》 · [Ethereum accounts](https://ethereum.org/developers/docs/accounts/) · [JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/)

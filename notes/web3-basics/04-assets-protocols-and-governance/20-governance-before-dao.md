@@ -6,7 +6,7 @@
 
 [第 04 章](../01-ethereum-l1/04-blocks-and-consensus.md)区分了网络的访问权限和规则治理。节点按底层协议验证交易，具体应用还会检查调用者是否具备应用层权限。[第 11 章](../03-contracts-and-foundry/11-fund-me-and-price-feeds.md)的 Fund Me 通过所有者限制提款。在 Box 例子里，合约也只接受所有者写入，测试将这个所有者设成时间锁（timelock）。参加投票的人通过治理规则表达决定，时间锁在执行条件满足后调用 Box。提案人、投票人、执行的触发者和实际调用 Box 的合约可以是不同主体。[Box 的权限检查](https://github.com/Cyfrin/foundry-dao-cu/blob/6f634deb8587d1a0c508e43680bebf16b3f34cb4/src/Box.sol#L7-L23) · [测试角色配置](https://github.com/Cyfrin/foundry-dao-cu/blob/6f634deb8587d1a0c508e43680bebf16b3f34cb4/test/MyGovernorTest.t.sol#L31-L54)
 
-去中心化自治组织（decentralized autonomous organization，DAO）通过一组共同规则协调决策。链下讨论可以提出问题、比较方案或争取支持。链上的治理合约将某些规则落为可核对的状态和权限，例如允许谁提交提案、怎样统计票数、哪个合约在什么时候执行。读权限时也要看是否仍有单独的管理角色。能读公开讨论、持有代币、能决定配置和能调用目标各有条件。[《Web3 Fundamentals》Decentralized Autonomous Organization，L940–960](../../../refs/B3_Web3_Fundamentals.md)
+去中心化自治组织（decentralized autonomous organization，DAO）通过一组共同规则协调决策。链下讨论可以提出问题、比较方案或争取支持。链上的治理合约将某些规则落为可核对的状态和权限，例如允许谁提交提案、怎样统计票数、哪个合约在什么时候执行。读权限时也要看是否仍有单独的管理角色。能读公开讨论、持有代币、能决定配置和能调用目标各有条件。《Web3 Fundamentals》Decentralized Autonomous Organization
 
 ## 提案怎样依次通过四道检查
 
@@ -35,7 +35,7 @@
 | 纸面反问，`VOTER` 改投弃权 | 0 | 0 | 100 | 100 ≥ 4，达标 | 否 |
 | 纸面反问，`VOTER` 不参与 | 0 | 0 | 0 | 0 < 4，未达标 | 否 |
 
-课程里同一位投票人掌握全部夹具票权，是为了方便检验流程。读实际协议还要问投票权委托给谁、是否集中以及提案范围有多大。[第 19 章](./19-reading-project-metrics.md)讨论过代币分配与资金归集，治理权和收取费用的权利需要按各自合约核查。[分析指南，Tokenomics，L175–189](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)
+课程里同一位投票人掌握全部夹具票权，是为了方便检验流程。读实际协议还要问投票权委托给谁、是否集中以及提案范围有多大。[第 19 章](./19-reading-project-metrics.md)讨论过代币分配与资金归集，治理权和收取费用的权利需要按各自合约核查。分析指南，Tokenomics
 
 ## 常见误区
 
@@ -54,10 +54,8 @@
 
 ## 来源
 
-- 《Web3 Fundamentals》Decentralized Autonomous Organization（第 37–38 页，L940–960）及 The economics of community（第 47–48 页，L1183–1199）。[参考书 Markdown](../../../refs/B3_Web3_Fundamentals.md)
-- 《A Guide to Fundamental Analysis in Crypto》Tokenomics（目录第 10 页，L175–189），代币分配和治理权。[分析指南 Markdown](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)
+- 《Web3 Fundamentals》Decentralized Autonomous Organization（第 37–38 页，L940–960）及 The economics of community（第 47–48 页，L1183–1199）。
+- 《A Guide to Fundamental Analysis in Crypto》Tokenomics（目录第 10 页，L175–189），代币分配和治理权。
 - 课程 DAO 决策场景与参与权问题。法定人数和执行细节以项目实现为准。[Updraft，Understanding Decentralized Governance and DAOs](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/5-blockchain-use-cases/7-decentralized-governance/%2Bpage.md#L1-L45)
 - 课程 Box 提案参数、票权委托与调用流程。[MyGovernor.sol](https://github.com/Cyfrin/foundry-dao-cu/blob/6f634deb8587d1a0c508e43680bebf16b3f34cb4/src/MyGovernor.sol#L16-L70) · [MyGovernorTest.t.sol](https://github.com/Cyfrin/foundry-dao-cu/blob/6f634deb8587d1a0c508e43680bebf16b3f34cb4/test/MyGovernorTest.t.sol#L31-L103)
 - 固定依赖的票权比例与计票规则。[GovernorVotesQuorumFraction.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/0a25c1940ca220686588c4af3ec526f725fe2582/contracts/governance/extensions/GovernorVotesQuorumFraction.sol#L63-L76) · [GovernorCountingSimple.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/0a25c1940ca220686588c4af3ec526f725fe2582/contracts/governance/extensions/GovernorCountingSimple.sol#L64-L80)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-20)

@@ -23,7 +23,7 @@
 | 为什么参与 | 符合条件的出块可获区块补贴和交易费。 | 验证者投入质押，正确履职可获奖励，某些可证明的违规会触发罚没。 |
 | 怎样看记录是否稳定 | 随有效链上后续区块累积，重组风险降低。 | 先观察交易位于当前采用的区块，再观察协议是否最终确定其所在历史。 |
 
-**确认（confirmation）**通常表示交易已进入当前采用的历史，随后可以观察有多少后续区块。**最终性（finality）**是协议对这段历史稳定性的更强保证，各网络的条件不同。区块刚收录时若节点随后采用另一条候选分支，所发生的是重组（reorganization）。协议升级的**软分叉（soft fork）**和**硬分叉（hard fork）**讨论的是验证规则的兼容性。典型的软分叉收紧有效性条件，按新规则产生的区块仍符合旧规则。采用不向后兼容的新规则需要升级，若部分参与者继续采用旧规则，可能留下两条持续的链。Ethereum 与 Ethereum Classic 的历史分流是一个实例。[《Web3 Fundamentals》· Forks（p. 13，L314–340）](../../../refs/B3_Web3_Fundamentals.md)
+**确认（confirmation）**通常表示交易已进入当前采用的历史，随后可以观察有多少后续区块。**最终性（finality）**是协议对这段历史稳定性的更强保证，各网络的条件不同。区块刚收录时若节点随后采用另一条候选分支，所发生的是重组（reorganization）。协议升级的**软分叉（soft fork）**和**硬分叉（hard fork）**讨论的是验证规则的兼容性。典型的软分叉收紧有效性条件，按新规则产生的区块仍符合旧规则。采用不向后兼容的新规则需要升级，若部分参与者继续采用旧规则，可能留下两条持续的链。Ethereum 与 Ethereum Classic 的历史分流是一个实例。《Web3 Fundamentals》· Forks（p. 13）
 
 <a id="04-2-chain-access-and-governance"></a>
 
@@ -45,6 +45,17 @@
 
 以太坊的**基础层（Layer 1, L1）**按本网络的规则执行和验证交易、收录顺序、确定历史并结算结果。在这里，结算指网络按协议认可结果，使后续操作有依据。转账 A 模拟的正是这类基础账本。每个区块能承载的执行和数据都有上限。[第 05 章](../02-scaling-and-multichain/05-l1-congestion-to-l2.md)将追问，怎样在基础层继续核验结果的前提下让更多交易执行。
 
+## 工作量证明和权益证明各解决什么
+
+当两个提议都合法、却不能同时成为同一高度的历史时，协议还要定义怎样选取历史。比特币用[工作量证明和累计工作量](./00-bitcoin-and-double-spending.md)；今天的以太坊用权益证明（proof of stake，PoS），出块和见证由协议指定的验证者承担，分叉选择与最终性依协议规则和验证者的权益权重推进。两种机制都要求节点自行核验区块是否有效；再多工作量或票数也不能让一个按规则无效的区块变有效。
+
+| 先问的问题 | 比特币 | 以太坊现行主网 |
+| --- | --- | --- |
+| 怎样参与共识？ | 矿工投入算力寻找合格的区块头，节点验证 | 验证者质押并按协议提议或见证，节点验证 |
+| 怎样看确认？ | 看有效历史上的累计工作及后续区块 | 区分当前链头、收录和协议最终性 |
+
+[Bitcoin 白皮书 §4–5](https://bitcoin.org/bitcoin.pdf) · [Ethereum · 权益证明](https://ethereum.org/developers/docs/consensus-mechanisms/pos/)
+
 ## 常见误区
 
 - **区块哈希相连，就自然只有一条候选链。** 两个有效块可以引用同一个父块。哈希关系说明它们如何相连，验证和选链规则决定该跟随哪一个。
@@ -63,8 +74,6 @@
 ## 来源
 
 - 共识、最终性和 PoS 的角色。[Updraft · Consensus Fundamentals，L1–61](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/3-consensus-fundamentals/%2Bpage.md#L1-L61) · [Updraft · How PoS Blockchains Work，L1–59](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/4-blockchain-architecture/6-how-pos-blockchains-work/%2Bpage.md#L1-L59)
-- 共享账本、链类型、双花、PoW、PoS 和分叉案例。取 The Backbone（pp. 4–6，L75–132；p. 13，L314–340）与 Mechanics（pp. 26–31，L648–798）。学校和社区案例是正文自拟。分析指南 Closing Thoughts（目录 p. 23，L386–394）用于理解公开数据的可观察性。[《Web3 Fundamentals》](../../../refs/B3_Web3_Fundamentals.md) · [《A Guide to Fundamental Analysis in Crypto》](../../../refs/A-Guide-to-Fundamental-Analysis-in-Crypto.md)
+- 共享账本、链类型、双花、PoW、PoS 和分叉案例。取 The Backbone（pp. 4–6，L75–132；p. 13，L314–340）与 Mechanics（pp. 26–31，L648–798）。学校和社区案例是正文自拟。分析指南 Closing Thoughts（目录 p. 23，L386–394）用于理解公开数据的可观察性。《Web3 Fundamentals》 · 《A Guide to Fundamental Analysis in Crypto》
 - 首笔公开网络交易和虚拟测试网的访问对照。Fabric 配置策略与 Ethereum 的升级过程作为官方补充。[Updraft · Sending Your First Transaction，L1–12](https://github.com/Cyfrin/Updraft/blob/1d7138f18fbe26bfff82a091df118efda52f29e7/courses/blockchain-basics/3-sending-transactions/5-sending-your-first-transaction/%2Bpage.md#L1-L12) · [Hyperledger Fabric 2.5 · Policies](https://hyperledger-fabric.readthedocs.io/en/release-2.5/policies/policies.html) · [Ethereum governance](https://ethereum.org/governance/)
 - 两条链各自的共识规则。Bitcoin 白皮书 §4–5 讲工作量及网络，Ethereum 文档的 How does Ethereum proof-of-stake work? 与 Finality 讲验证者职责和检查点。[Bitcoin 白皮书](https://bitcoin.org/bitcoin.pdf) · [Ethereum Proof-of-Stake](https://ethereum.org/developers/docs/consensus-mechanisms/pos/)
-
-[全书目录](../README.md) · [本章来源映射](../../../planning/beginner/source-map.md#ch-04)
